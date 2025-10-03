@@ -1,0 +1,44 @@
+# judge_model: gpt-4.5-preview (This judge is goated)
+
+# judge_model: gemini-2.5
+# temperature: 1.0
+# max_tokens: 32000: 
+judge_model: claude37_sonnet
+temperature: 0.0
+max_tokens: 8192
+parallel: 32
+
+bench_name: autocodearena
+
+reference: null
+
+regex_patterns:
+  - \[\[([AB<>=]+)\]\]
+  - \[([AB<>=]+)\]
+
+prompt_template: "<|The Start of User Question|>\n{QUESTION}\n<|The End of User Question|>\n\n<|The Start of Assistant A's Answer|>\n{ANSWER_A}{SCREENSHOT_A_SECTION}{VISUAL_A_SECTION}<|The End of Assistant A's Answer|>\n\n<|The Start of Assistant B's Answer|>\n{ANSWER_B}{SCREENSHOT_B_SECTION}{VISUAL_B_SECTION}<|The End of Assistant B's Answer|>"
+
+baseline_model: gpt-4.1-2025-04-14
+model_list:
+  # - glm-4.5
+  # - kimi-k2
+  # - claude-4-sonnet
+  # - claude-4-opus
+  # - gpt-4.1-2025-04-14
+  # - gemini-2.5-pro
+  # - qwen3-coder
+  # - o3-mini-2025-01-31
+  # - o4-mini-2025-04-16
+  # - claude37_sonnet
+  # - gpt-oss-120b
+  # - gpt-oss-20b
+  # - deepseek-chat-v3-0324
+  # - gemini-2.5-flash
+  # - deepseek-r1-0528
+  # - gpt-5-2025-08-07
+  # - gpt-4o-mini-2024-07-18
+  # - gpt-4o-2024-11-20
+  # - claude35_sonnet
+  # - claude35_haiku
+  # - deepseek-chat-v3.1
+  # - grok-code

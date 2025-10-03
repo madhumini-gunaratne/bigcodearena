@@ -1,0 +1,27 @@
+# Core dependencies for BigCodeArena
+gradio
+gradio-sandboxcomponent
+requests
+openai
+boto3
+PyYAML
+tqdm
+shortuuid
+Pillow
+pytest
+black
+flake8
+tree-sitter
+tree-sitter-javascript
+tree-sitter-java
+tree-sitter-python
+tree-sitter-go
+tree-sitter-rust
+tree-sitter-php
+tree-sitter-typescript
+tree-sitter-c
+e2b-code-interpreter
+azure-storage-blob
+huggingface_hub
+datasets
+scikit-learn

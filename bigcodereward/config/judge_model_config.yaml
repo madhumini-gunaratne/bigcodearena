@@ -1,0 +1,138 @@
+# Judge Model Configuration for BigCodeReward
+# This file defines the mappings and settings for different judge models
+
+# Model ID mappings - maps short names to full model identifiers
+model_mappings:
+  # Claude series (Bedrock)
+  sonnet35v2:
+    model_id: bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0
+    api_type: litellm
+    context_limit: 200000
+    min_request_interval: 1.0
+  
+  haiku35v1:
+    model_id: bedrock/us.anthropic.claude-3-5-haiku-20241022-v1:0
+    api_type: litellm
+    context_limit: 200000
+    min_request_interval: 1.0
+  
+  sonnet37v1:
+    model_id: bedrock/us.anthropic.claude-3-7-sonnet-20250219-v1:0
+    api_type: litellm
+    context_limit: 200000
+    min_request_interval: 1.0
+  
+  sonnet4:
+    model_id: bedrock/us.anthropic.claude-sonnet-4-20250514-v1:0
+    api_type: litellm
+    context_limit: 200000
+    min_request_interval: 1.0
+  
+  # OpenAI series
+  gpt-4o:
+    model_id: gpt-4o
+    api_type: openai
+    context_limit: 128000
+    min_request_interval: 1.0
+  
+  gpt-4o-mini:
+    model_id: gpt-4o-mini
+    api_type: openai
+    context_limit: 128000
+    min_request_interval: 1.0
+  
+  gpt-4.1:
+    model_id: gpt-4.1-2025-04-14
+    api_type: openai
+    context_limit: 128000
+    min_request_interval: 1.0
+  
+  gpt-4.1-mini:
+    model_id: gpt-4.1-mini-2025-04-14
+    api_type: openai
+    context_limit: 128000
+    min_request_interval: 1.0
+  
+  # SGLang locally deployed models (accessed via OpenAI compatible API)
+  qwen2.5-vl-32b:
+    model_id: openai/Qwen/Qwen2.5-VL-32B-Instruct
+    api_type: sglang
+    context_limit: 128000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+  
+  qwen2.5-vl-72b:
+    model_id: openai/Qwen/Qwen2.5-VL-72B-Instruct
+    api_type: sglang
+    context_limit: 128000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+  
+  glm-4.5v:
+    model_id: openai/zai-org/GLM-4.5v
+    api_type: sglang
+    context_limit: 130000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+  
+  gemma-3-27b:
+    model_id: openai/google/gemma-3-27b-it
+    api_type: sglang
+    context_limit: 128000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+    custom_model_path: /mnt/people/zhuoterq/xiaolong-swebench/hf_cache/google_gemma-3-27b-it
+  
+  OpenGVLab_InternVL3-38B:
+    model_id: openai/OpenGVLab_InternVL3-38B
+    api_type: sglang
+    context_limit: 80000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+    custom_model_path: /mnt/people/zhuoterq/xiaolong-swebench/hf_cache/OpenGVLab_InternVL3-38B
+  
+  OpenGVLab_InternVL3-78B:
+    model_id: openai/OpenGVLab_InternVL3-78B
+    api_type: sglang
+    context_limit: 80000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+    custom_model_path: /mnt/people/zhuoterq/xiaolong-swebench/hf_cache/OpenGVLab_InternVL3-78B
+  
+  XiaomiMiMo_MiMo-VL-7B-RL:
+    model_id: openai/XiaomiMiMo/MiMo-VL-7B-RL
+    api_type: sglang
+    context_limit: 80000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+  
+  MiniMaxAI_MiniMax-VL-01:
+    model_id: openai/MiniMaxAI/MiniMax-VL-01
+    api_type: sglang
+    context_limit: 80000
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+  
+  moonshotai_Kimi-VL-A3B-Thinking-2506:
+    model_id: openai/moonshotai/Kimi-VL-A3B-Thinking-2506
+    api_type: sglang
+    context_limit: 131072
+    min_request_interval: 0.001
+    api_base: http://localhost:30000/v1
+    custom_model_path: moonshotai/Kimi-VL-A3B-Thinking-2506
+
+# Content truncation settings
+content_limits:
+  max_code_length: 20000
+  max_instruction_length: 5000
+  max_output_length: 3000
+  reserved_tokens: 10000
+
+# Image processing settings
+image_settings:
+  enable_screenshot_compression: true
+  screenshot_max_size: [1024, 768]
+  screenshot_quality: 70
+  max_image_size: [1024, 1024]
+  jpeg_quality: 85
+

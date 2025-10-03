@@ -1,0 +1,37 @@
+# BigCodeReward Evaluation Configuration
+
+# Dataset information
+dataset:
+  name: bigcode/bigcodereward
+
+# Default judge model
+default_judge_model: sonnet35v2
+
+# Evaluation settings
+evaluation:
+  default_workers: 8
+  default_max_records: null  # null means no limit
+  include_output: true  # Include execution results by default
+  retry_failed: false
+
+# Output directories
+paths:
+  results_dir: results
+  logs_dir: results/logs
+  prompts_dir: prompts
+  analysis_dir: analysis_results
+
+# ELO computation parameters
+elo_params:
+  K: 4
+  SCALE: 400
+  BASE: 10
+  INIT_RATING: 1000
+  n_bootstrap: 1000
+  confidence_level: 0.9
+
+# Classification labels
+labels:
+  original: [vote_left, vote_right, vote_tie, vote_both_bad]
+  merged: [vote_left, vote_right, vote_uncertain]
+  merge_rule: tie_and_bad  # Merge vote_tie and vote_both_bad into vote_uncertain
