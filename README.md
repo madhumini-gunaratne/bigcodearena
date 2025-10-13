@@ -7,7 +7,7 @@
 <p align="center">
     <a href="https://huggingface.co/spaces/bigcode/arena"><img src="https://img.shields.io/badge/🤗-bigcodearena-%23ff8811?style=for-the-badge"></a>
     <a href="https://huggingface.co/collections/bigcode/bigcodearena-68cd3a196e5147cc45f8ea3d"><img src="https://img.shields.io/badge/🤗-collection-pink?style=for-the-badge"></a>
-    <a href="https://arxiv.org"><img src="https://img.shields.io/badge/arXiv-paper-b31b1b?style=for-the-badge"></a>
+    <a href="https://arxiv.org/abs/2510.08697"><img src="https://img.shields.io/badge/arXiv-2510.08697-b31b1b?style=for-the-badge"></a>
     <a href="https://github.com/bigcode-project/bigcodearena/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue?style=for-the-badge"></a>
 </p>
 
