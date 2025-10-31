@@ -1,0 +1,5 @@
+{"id": 0, "uid": "q1", "instruction": "Write a Python function that calculates the factorial of a number"}
+{"id": 1, "uid": "q2", "instruction": "Write a Python function that reverses a string"}
+{"id": 2, "uid": "q3", "instruction": "Write a Python function that checks if a number is prime"}
+{"id": 3, "uid": "q4", "instruction": "Write a Python function that finds the maximum element in a list"}
+{"id": 4, "uid": "q5", "instruction": "Write a Python function that sorts a list of tuples by the second element"}
