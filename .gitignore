@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Local vLLM models (large files, keep locally only)
+models_cache/
+
 # C extensions
 *.so
 
