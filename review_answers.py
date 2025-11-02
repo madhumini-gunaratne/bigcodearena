@@ -193,22 +193,38 @@ def print_metrics_table(answers):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python3 review_answers.py <path_to_generation.jsonl> [--limit N]")
+        print("""Usage: python3 review_answers.py <model_name_or_path> [--limit N]""")
         sys.exit(1)
     
-    answer_file = sys.argv[1]
+    input_arg = sys.argv[1]
     limit = None
     
     if '--limit' in sys.argv:
         limit = int(sys.argv[sys.argv.index('--limit') + 1])
     
-    if not Path(answer_file).exists():
-        print(f"File not found: {answer_file}")
+    # Check if input is a model name or file path
+    if input_arg.endswith('.jsonl') or input_arg.endswith('.json'):
+        # Direct file path
+        answer_file = input_arg
+    else:
+        # Model name - construct path
+        answer_file = Path("autocodearena/data/autocodearena_local/model_answer") / input_arg / "generation.jsonl"
+    
+    answer_file = Path(answer_file)
+    
+    if not answer_file.exists():
+        print(f"❌ File not found: {answer_file}")
+        print(f"   Check available models with: ls autocodearena/data/autocodearena_local/model_answer/")
         sys.exit(1)
     
-    print(f"Loading answers from: {answer_file}")
+    print(f"📥 Loading answers from: {answer_file}")
     answers = load_answers(answer_file)
-    print(f"Loaded {len(answers)} answers")
+    print(f"✓ Loaded {len(answers)} answers")
+    
+    if limit:
+        answers = answers[:limit]
+        print(f"✓ Limited to {len(answers)} answers")
+    
     print()
     
     # Print metrics table

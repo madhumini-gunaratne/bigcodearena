@@ -226,3 +226,6 @@ bigcodereward/results/gpt-4o
 bigcodereward/data
 bigcodereward/analysis_results_bigcode_reward
 bigcodereward/.vscode
+
+# Case study files
+case_study_*.txt

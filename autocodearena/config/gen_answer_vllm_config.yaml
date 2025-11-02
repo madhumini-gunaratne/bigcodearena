@@ -2,8 +2,8 @@ bench_name: autocodearena_local
 
 # Local vLLM models to test
 model_list:
-  - phi-2-vllm
-  # - qwen3-4b-inst-2507-vllm
+  # - phi-2-vllm
+  - qwen3-4b-inst-2507-vllm
 
 # Limit to 100 questions for testing
 limit: 100
