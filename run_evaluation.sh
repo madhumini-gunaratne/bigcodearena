@@ -5,6 +5,8 @@ NUM_QUESTIONS="${1:-100}"
 MODEL="${2:-phi-2-vllm}"
 CONFIG_FILE="autocodearena/config/gen_answer_vllm_config.yaml"
 ENDPOINT_FILE="autocodearena/config/vllm_config.yaml"
+VENV_DIR="$(pwd)/vllm_env"
+PYTHON="$VENV_DIR/bin/python"
 
 echo "=========================================="
 echo "BigCodeArena Evaluation Pipeline"
@@ -35,7 +37,7 @@ echo ""
 
 cd autocodearena
 
-python3 << PYTHON_SCRIPT
+"$PYTHON" << PYTHON_SCRIPT
 import sys
 sys.path.insert(0, '..')
 

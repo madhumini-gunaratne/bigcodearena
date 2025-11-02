@@ -5,6 +5,8 @@ __pycache__/
 
 # Local vLLM models (large files, keep locally only)
 models_cache/
+models/
+vllm_env/
 
 # C extensions
 *.so

@@ -1,27 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Setup vLLM locally in the project folder
+# Setup vLLM locally in the project folder using isolated venv
 MODEL="${1:-microsoft/phi-2}"  # Lightweight: 2.7GB, fast
 VLLM_PORT="${2:-8000}"
-CACHE_DIR="./models_cache"
+VENV_DIR="./vllm_env"
 
 echo "=========================================="
-echo "vLLM Local Setup"
+echo "vLLM Local Setup (Isolated Environment)"
 echo "=========================================="
 echo ""
 echo "Model:      $MODEL"
 echo "Port:       $VLLM_PORT"
-echo "Cache Dir:  $CACHE_DIR"
+echo "venv Dir:   $VENV_DIR"
 echo ""
 
-# Create cache directory
-mkdir -p "$CACHE_DIR"
-
-# Check if vLLM is installed
-if ! command -v vllm &> /dev/null; then
-    echo "⚠️  vLLM not found. Installing..."
-    pip install vllm -q
+# Create venv if it doesn't exist
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Creating Python virtual environment..."
+    python3 -m venv "$VENV_DIR"
+    "$VENV_DIR/bin/pip" install -q vllm
+    echo "✅ venv created with vLLM installed"
 fi
 
 echo ""
@@ -38,6 +37,9 @@ echo "Press Ctrl+C to stop the server"
 echo "=========================================="
 echo ""
 
-# Run vLLM server
-export HF_HOME="$CACHE_DIR"
-vllm serve "$MODEL" --port "$VLLM_PORT" --gpu-memory-utilization 0.4
+# Run vLLM server using the isolated venv
+"$VENV_DIR/bin/python" -m vllm.entrypoints.openai.api_server \
+  --model "$MODEL" \
+  --host 0.0.0.0 \
+  --port "$VLLM_PORT" \
+  --gpu-memory-utilization 0.4
