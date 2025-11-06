@@ -568,7 +568,7 @@ def main():
     import sys
     
     parser = argparse.ArgumentParser(description="Simple code execution system")
-    parser.add_argument("--data_path", default="data/autocodearena-v0", 
+    parser.add_argument("--data_path", default="data/autocodearena_local/model_answer", 
                        help="Path to data directory")
     parser.add_argument("--model_name", help="Specific model to process")
     parser.add_argument("--max_workers", type=int, default=10, 

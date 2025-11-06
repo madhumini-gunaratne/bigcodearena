@@ -2,9 +2,8 @@
 set -euo pipefail
 
 NUM_QUESTIONS="${1:-100}"
-MODEL="${2:-phi-2-vllm}"
-CONFIG_FILE="autocodearena/config/gen_answer_vllm_config.yaml"
-ENDPOINT_FILE="autocodearena/config/vllm_config.yaml"
+CONFIG_KEY="${2:-phi-2-vllm}"  # Config key from vllm_config.yaml
+VLLM_CONFIG_FILE="autocodearena/config/vllm_config.yaml"
 VENV_DIR="$(pwd)/vllm_env"
 PYTHON="$VENV_DIR/bin/python"
 
@@ -14,9 +13,8 @@ echo "=========================================="
 echo ""
 echo "⚙️  Configuration:"
 echo "  Questions:    $NUM_QUESTIONS"
-echo "  Model:        $MODEL"
-echo "  Config:       $CONFIG_FILE"
-echo "  Endpoints:    $ENDPOINT_FILE"
+echo "  Config Key:   $CONFIG_KEY"
+echo "  Config File:  $VLLM_CONFIG_FILE"
 echo ""
 
 # Check if vLLM server is running
@@ -41,7 +39,6 @@ cd autocodearena
 import sys
 sys.path.insert(0, '..')
 
-import argparse
 import json
 import os
 import requests
@@ -52,12 +49,40 @@ from tqdm import tqdm
 from utils.completion import load_questions_from_hf, make_config
 from sandbox.code_analyzer import extract_code_from_markdown
 
-# vLLM configuration
-MODEL = "$MODEL"
+# Load vLLM configuration from YAML
+CONFIG_KEY = "$CONFIG_KEY"
 NUM_QUESTIONS = $NUM_QUESTIONS
-ENDPOINT = "http://localhost:8000"
+VLLM_CONFIG_FILE = "$VLLM_CONFIG_FILE"
 
-print(f"🤖 Using model: {MODEL}")
+# Adjust path since we're inside autocodearena directory
+if not os.path.isabs(VLLM_CONFIG_FILE):
+    if not os.path.exists(VLLM_CONFIG_FILE):
+        VLLM_CONFIG_FILE = os.path.join("..", VLLM_CONFIG_FILE)
+
+print(f"📋 Loading vLLM configuration from: {VLLM_CONFIG_FILE}")
+
+VLLM_CONFIG = make_config(VLLM_CONFIG_FILE)
+
+# Get model configuration from YAML using config key
+if CONFIG_KEY not in VLLM_CONFIG:
+    print(f"❌ ERROR: Config key '{CONFIG_KEY}' not found in vLLM config")
+    print(f"   Available keys: {list(VLLM_CONFIG.keys())}")
+    exit(1)
+
+model_config = VLLM_CONFIG[CONFIG_KEY]
+ENDPOINT = model_config.get("endpoint", "http://localhost:8000")
+MAX_TOKENS = model_config.get("max_tokens", 8000)
+TEMPERATURE = model_config.get("temperature", 0.7)
+VLLM_MODEL = model_config.get("model", "microsoft/phi-2")
+
+print(f"✅ Configuration loaded from YAML:")
+print(f"   Config Key: {CONFIG_KEY}")
+print(f"   vLLM Model: {VLLM_MODEL}")
+print(f"   Endpoint: {ENDPOINT}")
+print(f"   Max Tokens: {MAX_TOKENS}")
+print(f"   Temperature: {TEMPERATURE}")
+print()
+
 print(f"📊 Processing first {NUM_QUESTIONS} questions")
 print()
 
@@ -65,6 +90,7 @@ print()
 print("📥 Loading questions from HuggingFace...")
 questions = load_questions_from_hf(repo_id="bigcode/autocodearena-v0")
 print(f"✓ Loaded {len(questions)} questions total")
+print()
 
 # Limit to N questions
 questions = questions[:NUM_QUESTIONS]
@@ -72,7 +98,7 @@ print(f"✓ Using first {len(questions)} questions for evaluation")
 print()
 
 # Create output directory
-output_dir = Path("data/autocodearena_local/model_answer") / MODEL
+output_dir = Path("data/autocodearena_local/model_answer") / CONFIG_KEY
 output_dir.mkdir(parents=True, exist_ok=True)
 answer_file = output_dir / "generation.jsonl"
 
@@ -92,29 +118,36 @@ with open(answer_file, "w") as fout:
             uid = question["uid"]
             instruction = question["instruction"]
             
-            # Call vLLM API
+            # Call vLLM API with configuration from YAML
             payload = {
-                "model": "microsoft/phi-2",
+                "model": VLLM_MODEL,
                 "prompt": instruction,
-                "max_tokens": 512,
-                "temperature": 0.7,
+                "max_tokens": MAX_TOKENS,
+                "temperature": TEMPERATURE,
             }
             
-            response = requests.post(
-                f"{ENDPOINT}/v1/completions",
-                json=payload,
-                timeout=120
-            )
-            
-            if response.status_code == 200:
-                result = response.json()
-                if "choices" in result and len(result["choices"]) > 0:
-                    answer_text = result["choices"][0].get("text", "")
+            try:
+                response = requests.post(
+                    f"{ENDPOINT}/v1/completions",
+                    json=payload,
+                    timeout=600  # 10 minutes - needed for token generation
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    if "choices" in result and len(result["choices"]) > 0:
+                        answer_text = result["choices"][0].get("text", "")
+                    else:
+                        answer_text = ""
                 else:
-                    answer_text = ""
-            else:
-                answer_text = f"ERROR: {response.status_code}"
+                    answer_text = f"ERROR: {response.status_code}"
+                    print(f"  ⚠️  Question {i} returned {response.status_code}")
+                    print(f"      Response: {response.text[:200]}")
+                    errors += 1
+            except Exception as e:
+                answer_text = f"ERROR: Exception - {str(e)[:100]}"
                 errors += 1
+                print(f"  ⚠️  Question {i} raised exception: {str(e)[:100]}")
             
             # Format answer in the expected structure
             record = {
@@ -148,5 +181,5 @@ cd ..
 
 echo ""
 echo "✅ Generated answers saved to:"
-echo "   autocodearena/data/autocodearena_local/model_answer/$MODEL/generation.jsonl"
+echo "   autocodearena/data/autocodearena_local/model_answer/$CONFIG_KEY/generation.jsonl"
 echo ""
