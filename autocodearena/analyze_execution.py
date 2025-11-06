@@ -51,11 +51,8 @@ def analyze_execution_results(model_dir):
         else:
             failed += 1
     
-    # Print summary
+    # Calculate success rate for later
     success_rate = (successful / len(results) * 100) if len(results) > 0 else 0
-    print(f"✅ Successful executions: {successful} ({success_rate:.1f}%)")
-    print(f"❌ Failed executions: {failed} ({100 - success_rate:.1f}%)")
-    print()
     
     # Print by environment
     print("=" * 80)
@@ -88,6 +85,16 @@ def analyze_execution_results(model_dir):
     missing_fields = sum(1 for r in results if 'Missing required fields' in r.get('stderr', ''))
     if missing_fields > 0:
         print(f"⚠️  Entries with missing required fields: {missing_fields}")
+    print()
+    
+    # Print final summary
+    print("=" * 80)
+    print("📊 FINAL SUMMARY:")
+    print("=" * 80)
+    print(f"📈 Total executions: {len(results)}")
+    print(f"✅ Successful executions: {successful} ({success_rate:.1f}%)")
+    print(f"❌ Failed executions: {failed} ({100 - success_rate:.1f}%)")
+    print("=" * 80)
     print()
     
     # Save summary to file
