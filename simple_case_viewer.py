@@ -36,8 +36,8 @@ def format_question(question):
     
     return '<br>'.join(formatted_lines)
 
-def create_simple_viewer(model_name, num_success=2, num_error=2):
-    """Generate simple HTML viewer with successful and error cases."""
+def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None, success_uid=None, error_uid=None):
+    """Generate simple HTML viewer with successful and error cases, or specific UIDs."""
     
     results_dir = Path(f"autocodearena/data/autocodearena_local/model_answer/{model_name}")
     
@@ -64,6 +64,16 @@ def create_simple_viewer(model_name, num_success=2, num_error=2):
         uid = r['uid']
         gen = gen_data.get(uid, {})
         
+        # Skip if specific UIDs are provided and this doesn't match
+        if success_uid and uid == success_uid:
+            pass  # Include this one
+        elif error_uid and uid == error_uid:
+            pass  # Include this one
+        elif target_uid and uid == target_uid:
+            pass  # Include this one
+        elif success_uid or error_uid or target_uid:
+            continue  # Skip if we're filtering for specific UIDs
+        
         case = {
             'uid': uid,
             'category': r.get('category', 'Unknown'),
@@ -73,8 +83,22 @@ def create_simple_viewer(model_name, num_success=2, num_error=2):
             'stderr': r.get('stderr', ''),
             'code': '',
             'image_base64': None,
-            'has_error': bool(r.get('stderr'))
+            'has_error': bool(r.get('stderr')),
+            'note': '',
+            'is_false_positive': uid == error_uid  # Mark if this is the false positive case
         }
+        
+        # Add note for false positive cases
+        if case['is_false_positive']:
+            case['note'] = '⚠️ FALSE POSITIVE: This case passes Python execution with no stderr, but the generated code contains runtime errors in the browser/JavaScript execution. The system incorrectly classified this as successful because it only checks for Python errors, not JavaScript/browser errors.'
+        # Add note for other cases that pass but don't generate expected output
+        elif not case['has_error'] and r.get('screenshot_path'):
+            screenshot_path = results_dir / r['screenshot_path']
+            if screenshot_path.exists():
+                # Check if screenshot shows errors (this is a heuristic)
+                # For now, we'll add a note if there's no stdout and it has a screenshot
+                if not case['stdout']:
+                    case['note'] = '⚠️ Note: This case passes Python execution but may contain runtime errors in the generated output. No Python stderr was captured, but the browser/runtime execution may have encountered issues.'
         
         # Extract code
         if gen.get('messages'):
@@ -108,9 +132,24 @@ def create_simple_viewer(model_name, num_success=2, num_error=2):
         else:
             successful.append(case)
     
-    # Limit cases
-    successful = successful[:num_success]
-    error_cases = error_cases[:num_error]
+    # Handle specific UIDs
+    if success_uid or error_uid:
+        # Collect the requested UIDs
+        requested_uids = []
+        if success_uid:
+            requested_uids.append(success_uid)
+        if error_uid:
+            requested_uids.append(error_uid)
+        
+        # Filter successful to only requested UIDs (treating all as successful)
+        successful = [c for c in successful if c['uid'] in requested_uids]
+        error_cases = []  # Keep error_cases empty since we're showing both as successes
+    elif target_uid:
+        # If target_uid is specified, only use that case
+        pass
+    else:
+        successful = successful[:num_success]
+        error_cases = error_cases[:num_error]
     all_cases = successful + error_cases
     
     # Generate HTML
@@ -184,6 +223,7 @@ def create_simple_viewer(model_name, num_success=2, num_error=2):
             <span>UID: <code>{case['uid']}</code></span>
             <span>Environment: <strong>{case['environment']}</strong></span>
         </div>
+        {f'<div style="background: #fff8dc; padding: 12px; margin: 10px 0; border-left: 4px solid #ff9800; color: #333;">{case["note"]}</div>' if case.get('note') else ''}
         
         <h3>Question:</h3>
         <div class="question">{format_question(case['question'])}</div>
@@ -241,6 +281,9 @@ def create_simple_viewer(model_name, num_success=2, num_error=2):
 if __name__ == "__main__":
     import sys
     model = sys.argv[1] if len(sys.argv) > 1 else "qwen3-4b-inst-2507-vllm"
-    num_success = int(sys.argv[2]) if len(sys.argv) > 2 else 2
-    num_error = int(sys.argv[3]) if len(sys.argv) > 3 else 2
-    create_simple_viewer(model, num_success, num_error)
+    num_success = int(sys.argv[2]) if len(sys.argv) > 2 else 1
+    num_error = int(sys.argv[3]) if len(sys.argv) > 3 else 1
+    target_uid = sys.argv[4] if len(sys.argv) > 4 else None
+    success_uid = sys.argv[5] if len(sys.argv) > 5 else None
+    error_uid = sys.argv[6] if len(sys.argv) > 6 else None
+    create_simple_viewer(model, num_success, num_error, target_uid, success_uid, error_uid)
