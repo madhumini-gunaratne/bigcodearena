@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study - phi-2-vllm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        h1 { color: #333; }
+        .case { 
+            background: white; 
+            margin: 20px 0; 
+            padding: 20px; 
+            border: 1px solid #ddd;
+            max-width: 900px;
+        }
+        .case.error { border-left: 4px solid #d9534f; }
+        .case.success { border-left: 4px solid #5cb85c; }
+        .case h2 { color: #333; margin-top: 0; }
+        .status { display: inline-block; padding: 4px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; }
+        .status.success { background: #5cb85c; color: white; }
+        .status.error { background: #d9534f; color: white; }
+        .meta { color: #666; font-size: 0.9em; margin-bottom: 15px; }
+        .meta span { margin-right: 20px; }
+        h3 { color: #333; margin-top: 20px; }
+        .question { background: #fafafa; padding: 15px; margin: 15px 0; border-left: 4px solid #333; line-height: 1.6; }
+        .question code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+        .question strong { color: #d9534f; }
+        .example { background: #e8f4f8; padding: 10px; margin: 10px 0; border-left: 3px solid #5cb85c; border-radius: 3px; font-family: monospace; font-size: 0.85em; overflow-x: auto; }
+        .code { 
+            background: #f5f5f5; 
+            padding: 0; 
+            margin: 15px 0; 
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .code pre { 
+            margin: 0;
+            padding: 15px;
+            overflow-x: auto;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        .image { margin: 15px 0; }
+        .image img { max-width: 100%; height: auto; border: 1px solid #ddd; }
+        .output { background: #f0f0f0; padding: 15px; margin: 15px 0; border: 1px solid #ddd; white-space: pre-wrap; font-family: monospace; font-size: 0.85em; }
+        .error-output { background: #fff3cd; padding: 15px; margin: 15px 0; border: 1px solid #ffc107; color: #856404; font-family: monospace; font-size: 0.85em; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>phi-2-vllm</h1>
+    <p>Successful: 2 | Errors: 2</p>
+
+    <div class="case success">
+        <h2>Success 1: game_development <span class="status success">SUCCESS</span></h2>
+        <div class="meta">
+            <span>UID: <code>aa529ab44813453db9b0f70b765b2db4</code></span>
+            <span>Environment: <strong>Python Runner</strong></span>
+        </div>
+        
+        <h3>Question:</h3>
+        <div class="question">Let&#x27;s build a Python app called &quot;LLM Storyteller RPG&quot;.<br><br>This app will:
+
+Generate a dynamic, interactive role-playing game where the LLM acts as the game master (GM).<br><br>Create a procedurally generated world with unique characters, locations, quests, and plot twists.<br><br>Allow the user to play as the main character making choices that influence the storyline.<br><br>Adapt the narrative based on user decisions, creating a non-linear story experience.<br><br>Include combat mechanics with turn-based battles against enemies.<br><br>Track character progression with skills, items, and experience points.<br><br>Visualize the story using simple pixel art and text-based scenes in Pygame.</div>
+        
+        <h3>Generated Code:</h3>
+        <div class="code"><pre><code class="language-python">
+
+```python
+# This is a high-level overview and does not contain complete Python code.
+```
+
+## Generating a Procedurally Generated World
+The first step in building our app is to generate a procedurally generated world. We will use a list to store all the locations in the game.
+
+```python
+# List of locations in the game
+locations = [&quot;Forest&quot;, &quot;Castle&quot;, &quot;Town&quot;, &quot;Mountain&quot;, &quot;Cave&quot;]
+```
+
+## Procedurally Generated Characters
+We will use a dictionary to store all the characters in the game. Each character will have attributes like health, strength, and intelligence.
+
+```python
+# Characters in the game
+characters = {
+    &quot;Knight&quot;: {&quot;hp&quot;: 100, &quot;str&quot;: 50, &quot;int&quot;: 30},
+    &quot;Wizard&quot;: {&quot;hp&quot;: 80, &quot;str&quot;: 70, &quot;int&quot;: 50},
+    &quot;Elf&quot;: {&quot;hp&quot;: 60, &quot;str&quot;: 80, &quot;int&quot;: 60},
+    &quot;Orc&quot;: {&quot;hp&quot;: 80, &quot;str&quot;: 40, &quot;int&quot;: 70},
+}
+```
+
+## Non-Linear Storytelling
+The LLM will be responsible for creating a non-linear story experience. This can be achieved by using a list to store the story path.
+
+```python
+# Story path
+story_path = [&quot;Start&quot;, &quot;Castle&quot;, &quot;Mountain&quot;, &quot;End&quot;]
+```
+
+## Combat Mechanics
+We will use a while loop to implement the turn-based combat mechanics. During each turn, the user character will choose an action (attack, defend, or flee) and the enemy character will respond accordingly.
+
+```python
+# Combat mechanics
+while game_is_active:
+    player_action = get_player_action()
+    enemy_response = get_enemy_response(player_action)
+    update_game_state(player_action, enemy_response)
+```
+
+## Visualization
+Finally, we will use Pygame to visualize the story with pixel art and text-based scenes. We will use a dictionary to store the images for each scene.
+
+```python
+# Scene images
+scene_images = {
+    &quot;Forest&quot;: load_forest_image(),
+    &quot;Castle&quot;: load_castle_image(),
+    &quot;Town&quot;: load_town_image(),
+    &quot;Mountain&quot;: load_mountain_image(),
+    &quot;Cave&quot;: load_cave_image(),
+}
+```
+
+## Exercises
+
+1. Add a new location to the list of locations.
+2. Add a new character to the dictionary of characters.
+3. Add a new action to the story path.
+4. Implement a new enemy response to the player&#x27;s action.
+5. Load new images for the scenes in the dictionary.
+
+### Exercise 1 Solution
+```python
+# Add a new location to the list of locations
+locations.append(&quot;Desert&quot;)
+```
+
+### Exercise 2 Solution
+```python
+# Add a new character to the dictionary of characters
+characters[&quot;Dwarf&quot;] = {&quot;hp&quot;: 70, &quot;str&quot;: 40, &quot;int&quot;: 90}
+```
+
+### Exercise 3 Solution
+```python
+# Add a new action to the story path
+story_path.append(&quot;End&quot;)
+```
+
+### Exercise 4 Solution
+```python
+# Implement a new enemy response to the player&#x27;s action
+def get_enemy_response(player_action):
+    if player_action == &quot;Attack&quot;:
+        return &quot;Backstab!&quot;
+    elif player_action == &quot;Defend&quot;:
+        return &quot;Shield up!&quot;
+    elif player_action == &quot;Flee&quot;:
+        return &quot;Run!&quot;
+```
+
+### Exercise 5 Solution
+```python
+# Load new images for the scenes in the dictionary
+scene_images[&quot;Forest&quot;] = load_forest_image()
+scene_images[&quot;Castle&quot;] = load_castle_image()
+scene_images[&quot;Town&quot;] = load_town_image()
+scene_images[&quot;Mountain&quot;] = load_mountain_image()
+scene_images[&quot;Cave&quot;] = load_cave_image()
+```
+
+
+</code></pre></div>
+        
+        <h3>Result:</h3>
+        <div class="output"><strong>Output:</strong>
+</div>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+    </div>
+
+    <div class="case success">
+        <h2>Success 2: web_design <span class="status success">SUCCESS</span></h2>
+        <div class="meta">
+            <span>UID: <code>8f3b15bffd11499dbe145cdfde884922</code></span>
+            <span>Environment: <strong>Python Runner</strong></span>
+        </div>
+        
+        <h3>Question:</h3>
+        <div class="question">Using React, build an application that allows users to design and test digital logic circuits with basic logic gates.<br><br>Use dummy outputs for any API-related features, ensuring a fully self-contained project.</div>
+        
+        <h3>Generated Code:</h3>
+        <div class="code"><pre><code class="language-python">
+
+```python
+# Idea: Use Redux to manage user interactions and logic gate testing.
+# Solution: [link]
+```
+
+**Exercise 4:** Write a JavaScript function to calculate the factorial of a number.
+
+```python
+# Idea: Use recursion to calculate factorials.
+# Solution: [link]
+```
+
+**Exercise 5:** Write a JavaScript function that takes an array of integers and returns the array sorted in ascending order.
+
+```python
+# Idea: Use built-in sort methods and loops to sort an array.
+# Solution: [link]
+```
+
+</code></pre></div>
+        
+        <h3>Result:</h3>
+        <div class="output"><strong>Output:</strong>
+</div>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+    </div>
+
+    <div class="case error">
+        <h2>Error 1: problem_solving <span class="status error">ERROR</span></h2>
+        <div class="meta">
+            <span>UID: <code>afba8f37ec1f42c4b6fbd06cb8535053</code></span>
+            <span>Environment: <strong>Unknown</strong></span>
+        </div>
+        
+        <h3>Question:</h3>
+        <div class="question">Use the given directions to design a pleasing react application:
+You are given an integer array cards of length 4.<br><br>You have four cards, each containing a number in the range [1, 9].<br><br>You should arrange the numbers on these cards in a mathematical expression using the operators [&#x27;+&#x27;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&#x27;-&#x27;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&#x27;*&#x27;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&#x27;/&#x27;] and<br>&nbsp;&nbsp;&nbsp;&nbsp;the parentheses &#x27;(&#x27; and<br>&nbsp;&nbsp;&nbsp;&nbsp;&#x27;)&#x27; to get the value 24.<br><br>You are restricted with the following rules:
+The division operator &#x27;/&#x27; represents real division, not integer division.<br><br>For example, 4 / (1 - 2 / 3) = 4 / (1 / 3) = 12.<br><br>Every operation done is between two numbers.<br><br>In particular, we cannot use &#x27;-&#x27; as a unary operator.<br><br>For example, if cards = [1, 1, 1, 1], the expression &quot;-1 - 1 - 1 - 1&quot; is not allowed.<br><br>You cannot concatenate numbers together
+For example, if cards = [1, 2, 1, 2], the expression &quot;12 + 12&quot; is not valid.<br><br>Return true if you can get such expression that evaluates to 24, and false otherwise</div>
+        
+        <h3>Generated Code:</h3>
+        <div class="code"><pre><code class="language-python">.
+Example 1:
+
+Input: cards = [1,1,1,1]
+Output: false
+Explanation: There is no way to get 24.
+Example 2:
+
+Input: cards = [1,1,2,1]
+Output: true
+Explanation: (1 + 1 + 2 + 1)
+Example 3:
+
+Input: cards = [1,2,1,1]
+Output: true
+Explanation: (1 + 2 + 1 + 1)
+Example 4:
+
+Input: cards = [1,2,2,1]
+Output: false
+Explanation: (1 + 2 + 2 + 1) is not allowed because of the repeated elements.
+Example 5:
+
+Input: cards = [1,2,3,1]
+Output: false
+Explanation: (1 + 2 + 3 + 1) is not allowed because the expression is not balanced.
+ 
+
+Constraints:
+
+1 &lt;= cards.length &lt;= 4
+1 &lt;= cards[i] &lt;= 9
+
+&quot;&quot;&quot;
+
+# Time complexity: O(4^4)
+# Space complexity: O(1)
+
+class Solution:
+    def checkValid(self, cards: List[int]) -&gt; bool:
+        if len(cards) != 4:
+            return False
+        
+        if sum(cards) != 24:
+            return False
+        
+        for i in range(len(cards)):
+            for j in range(i+1, len(cards)):
+                for k in range(j+1, len(cards)):
+                    for l in range(k+1, len(cards)):
+                        ops = [
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;],
+                            [&quot;+(1)&quot;,&quot;+&quot;,&quot;1&quot;,&quot;+&quot;,&quot;2&quot;,&quot;+&quot;,&quot;4&quot;,&quot;+&quot;,&quot;8&quot;]
+                        ]
+                        
+                        for op in ops:
+                            n1 = cards[i]
+                            n2 = cards[j]
+                            n3</code></pre></div>
+        
+        <h3>Error Output:</h3>
+        <div class="error-output">Missing required fields</div>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+    </div>
+
+    <div class="case error">
+        <h2>Error 2: web_design <span class="status error">ERROR</span></h2>
+        <div class="meta">
+            <span>UID: <code>7c9523709afe4f6dbb397d106443507c</code></span>
+            <span>Environment: <strong>Unknown</strong></span>
+        </div>
+        
+        <h3>Question:</h3>
+        <div class="question">## 1.<br><br>Overview
+The goal is to build an MVP demonstrating core functionalities:
+- Donation &amp; Funding Management
+- Real-Time Resource Inventory Tracking
+- Optimization &amp; Allocation Engine
+- Logistics &amp; Distribution Coordination
+- Reporting &amp; Analytics Dashboard
+
+The system must be modular,<br>&nbsp;&nbsp;&nbsp;&nbsp;secure,<br>&nbsp;&nbsp;&nbsp;&nbsp;scalable,<br>&nbsp;&nbsp;&nbsp;&nbsp;and data-driven,<br>&nbsp;&nbsp;&nbsp;&nbsp;integrating real-time data from campus networks and<br>&nbsp;&nbsp;&nbsp;&nbsp;external APIs (payment gateways,<br>&nbsp;&nbsp;&nbsp;&nbsp;mapping services,<br>&nbsp;&nbsp;&nbsp;&nbsp;etc.).
+
+## 2.<br><br>System Architecture
+
+### 2.1 High-Level Components
+- **Frontend:** 
+  - Web portal built with React.
+  - Mobile app built with Flutter for field coordinators.
+  
+- **Backend Services:** 
+  - RESTful API layer (choose either Node.js/Express or Python with FastAPI).
+  - Optimization service (Python-based,<br>&nbsp;&nbsp;&nbsp;&nbsp;using PuLP or Google OR-Tools).
+  - Notification service using websockets or push notifications.
+  
+- **Database:**
+  - **Relational Database:** PostgreSQL for transactional data (donations,<br>&nbsp;&nbsp;&nbsp;&nbsp;users,<br>&nbsp;&nbsp;&nbsp;&nbsp;allocation logs).
+  - **NoSQL/Real-Time Store:** Firebase or Redis for real-time inventory and<br>&nbsp;&nbsp;&nbsp;&nbsp;field updates.
+  
+- **External Integrations:** 
+  - Payment gateways (e.g.,<br>&nbsp;&nbsp;&nbsp;&nbsp;Paystack or Flutterwave).
+  - Mapping &amp; Routing APIs (e.g.,<br>&nbsp;&nbsp;&nbsp;&nbsp;Google Maps API).
+  - SMS/Push notification APIs for alerts.
+
+### 2.2 Deployment &amp; Infrastructure
+- Deploy on a cloud provider (AWS/GCP/Azure) using containerization (Docker) for each microservice.
+- Set up a CI/CD pipeline (using GitHub Actions or Jenkins).
+- Use monitoring and<br>&nbsp;&nbsp;&nbsp;&nbsp;logging tools (Prometheus/Grafana or ELK stack).
+
+## 3.<br><br>Module Design &amp; Implementation Details
+
+### 3.1 Donation &amp; Funding Management Module
+- **API Endpoints:**
+  - `POST /donations`: Process a new donation (validate payment,<br>&nbsp;&nbsp;&nbsp;&nbsp;record donor info).
+  - `GET /donations`: Retrieve donation history (with filters).
+  - `GET /funds`: Get current fund balance and<br>&nbsp;&nbsp;&nbsp;&nbsp;allocation status.
+  
+- **Implementation:**
+  - Integrate with a payment processor (Stripe/Paystack SDK) and<br>&nbsp;&nbsp;&nbsp;&nbsp;use webhooks for transaction confirmation.
+  - Create database tables:
+    - `donors (donor_id,<br>&nbsp;&nbsp;&nbsp;&nbsp;name,<br>&nbsp;&nbsp;&nbsp;&nbsp;email,<br>&nbsp;&nbsp;&nbsp;&nbsp;contact_info)`
+    - `donations (donation_id,<br>&nbsp;&nbsp;&nbsp;&nbsp;donor_id,<br>&nbsp;&nbsp;&nbsp;&nbsp;amount,<br>&nbsp;&nbsp;&nbsp;&nbsp;currency,<br>&nbsp;&nbsp;&nbsp;&nbsp;timestamp,<br>&nbsp;&nbsp;&nbsp;&nbsp;status)`
+  - Enforce security with HTTPS,<br>&nbsp;&nbsp;&nbsp;&nbsp;OAuth/JWT authentication,<br>&nbsp;&nbsp;&nbsp;&nbsp;and PCI-DSS compliance.
+
+### 3.2 Resource Inventory Tracking Module
+- **API Endpoints:**
+  - `GET /inventory`: Get current resource levels per campus/distribution center.
+  - `POST /inventory/update`: Update inventory levels (for field coordinators).
+  - `GET /inventory/logs`: Retrieve audit logs of inventory changes.
+  
+- **Implementation:**
+  - Use Firebase or Redis Pub/Sub for real-time updates.
+  - Data model example:
+    - `inventory (location_id,<br>&nbsp;&nbsp;&nbsp;&nbsp;resource_type,<br>&nbsp;&nbsp;&nbsp;&nbsp;quantity,<br>&nbsp;&nbsp;&nbsp;&nbsp;last_updated)`
+  - Integrate with university databases (via REST API or ETL jobs).
+
+### 3.3 Optimization &amp; Allocation Engine
+- **Purpose:** Optimize allocation of resources (or funds) to campuses based on demand,<br>&nbsp;&nbsp;&nbsp;&nbsp;supply,<br>&nbsp;&nbsp;&nbsp;&nbsp;and logistics.
+  
+- **Algorithm:**
+  - **Decision Variables:** Define \( x_{ij} \) = quantity of resource allocated from source \( i \) to campus \( j \).
+  - **Objective:** Minimize total cost (or maximize coverage).<br><br>For example:
+    \[
+    \min \sum_{i,j} c_{ij} \cdot x_{ij}
+    \]
+    where \( c_{ij} \) represents the cost (or time) to transport resources.
+  - **Constraints:**
+    - Supply: \(\sum_j x_{ij} \leq S_i\) for each source \( i \).
+    - Demand: \(\sum_i x_{ij} \geq D_j\) for each campus \( j \).
+    - Non-negativity: \( x_{ij} \geq 0 \).
+  
+- **Implementation Steps:**
+  1.<br><br>Ingest real-time inventory and demand data.
+  2.<br><br>Set up the linear programming model using Python (PuLP or OR-Tools).
+  3.<br><br>Create an API endpoint `POST /optimize` that accepts current data and<br>&nbsp;&nbsp;&nbsp;&nbsp;returns the allocation plan.
+  
+- **Sample Pseudocode:**
+```python
+import pulp
+
+def optimize_allocation(supply,<br>&nbsp;&nbsp;&nbsp;&nbsp;demand,<br>&nbsp;&nbsp;&nbsp;&nbsp;cost):
+    prob = pulp.LpProblem(&quot;ResourceAllocation&quot;,<br>&nbsp;&nbsp;&nbsp;&nbsp;pulp.LpMinimize)
+    x = pulp.LpVariable.dicts(&quot;alloc&quot;,<br>&nbsp;&nbsp;&nbsp;&nbsp;[(w,<br>&nbsp;&nbsp;&nbsp;&nbsp;c) for w in supply for c in demand],<br>&nbsp;&nbsp;&nbsp;&nbsp;lowBound=0,<br>&nbsp;&nbsp;&nbsp;&nbsp;cat=&#x27;Continuous&#x27;)
+    prob += pulp.lpSum([cost[w][c] * x[(w,<br>&nbsp;&nbsp;&nbsp;&nbsp;c)] for w in supply for c in demand])
+    for w in supply:
+        prob += pulp.lpSum([x[(w,<br>&nbsp;&nbsp;&nbsp;&nbsp;c)] for c in demand]) &lt;= supply[w]
+    for c in demand:
+        prob += pulp.lpSum([x[(w,<br>&nbsp;&nbsp;&nbsp;&nbsp;c)] for w in supply]) &gt;= demand[c]
+    prob.solve()
+    return {(w,<br>&nbsp;&nbsp;&nbsp;&nbsp;c): x[(w,<br>&nbsp;&nbsp;&nbsp;&nbsp;c)].varValue for w in supply for c in demand}
+
+3.4 Logistics &amp; Distribution Module
+	•	API Endpoints:
+	•	POST /logistics/plan: Accept the allocation plan and<br>&nbsp;&nbsp;&nbsp;&nbsp;generate delivery routes.
+	•	GET /logistics/status: Retrieve current delivery statuses.
+	•	POST /logistics/update: Allow field agents to update delivery status.
+	•	Implementation:
+	•	Integrate with Google Maps API for route optimization (consider real-time traffic).
+	•	Develop scheduling algorithms for coordinating multiple deliveries.
+	•	Data model example:
+	•	deliveries (delivery_id,<br>&nbsp;&nbsp;&nbsp;&nbsp;source_id,<br>&nbsp;&nbsp;&nbsp;&nbsp;destination_id,<br>&nbsp;&nbsp;&nbsp;&nbsp;scheduled_time,<br>&nbsp;&nbsp;&nbsp;&nbsp;status,<br>&nbsp;&nbsp;&nbsp;&nbsp;route_details)
+
+3.5 Reporting &amp; Analytics Dashboard
+	•	API Endpoints:
+	•	GET /reports/summary: Provide an overview of funds,<br>&nbsp;&nbsp;&nbsp;&nbsp;allocations,<br>&nbsp;&nbsp;&nbsp;&nbsp;and deliveries.
+	•	GET /reports/inventory: Retrieve historical inventory data.
+	•	GET /reports/donations: Get detailed donation and<br>&nbsp;&nbsp;&nbsp;&nbsp;fund usage metrics.
+	•	Implementation:
+	•	Build the dashboard using React and<br>&nbsp;&nbsp;&nbsp;&nbsp;libraries like Chart.js.
+	•	Aggregate data from PostgreSQL and<br>&nbsp;&nbsp;&nbsp;&nbsp;real-time sources.
+	•	Ensure role-based access to sensitive data.
+
+4.<br><br>Database Schema &amp; Data Modeling
+
+4.1 PostgreSQL Schema Examples
+	•	Users Table:
+
+CREATE TABLE users (
+  user_id SERIAL PRIMARY KEY,<br>&nbsp;&nbsp;&nbsp;&nbsp;username VARCHAR(50) UNIQUE NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;email VARCHAR(100) UNIQUE NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;password_hash TEXT NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;role VARCHAR(20) NOT NULL  -- (e.g.,<br>&nbsp;&nbsp;&nbsp;&nbsp;admin,<br>&nbsp;&nbsp;&nbsp;&nbsp;donor,<br>&nbsp;&nbsp;&nbsp;&nbsp;field_agent)
+);
+
+	•	Donations Table:
+
+CREATE TABLE donations (
+  donation_id SERIAL PRIMARY KEY,<br>&nbsp;&nbsp;&nbsp;&nbsp;donor_id INT REFERENCES users(user_id),<br>&nbsp;&nbsp;&nbsp;&nbsp;amount NUMERIC(10,<br>&nbsp;&nbsp;&nbsp;&nbsp;2) NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;currency VARCHAR(10) NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,<br>&nbsp;&nbsp;&nbsp;&nbsp;status VARCHAR(20) NOT NULL  -- (e.g.,<br>&nbsp;&nbsp;&nbsp;&nbsp;pending,<br>&nbsp;&nbsp;&nbsp;&nbsp;completed,<br>&nbsp;&nbsp;&nbsp;&nbsp;failed)
+);
+
+	•	Inventory Table:
+
+CREATE TABLE inventory (
+  inventory_id SERIAL PRIMARY KEY,<br>&nbsp;&nbsp;&nbsp;&nbsp;location_id INT NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;resource_type VARCHAR(50) NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;quantity INT NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+	•	Allocation Logs Table:
+
+CREATE TABLE allocations (
+  allocation_id SERIAL PRIMARY KEY,<br>&nbsp;&nbsp;&nbsp;&nbsp;location_id INT NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;allocated_quantity INT NOT NULL,<br>&nbsp;&nbsp;&nbsp;&nbsp;allocation_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,<br>&nbsp;&nbsp;&nbsp;&nbsp;details JSONB
+);
+
+4.2 Real-Time Data Store (Firebase/Redis)
+	•	Use for:
+	•	Real-time inventory updates.
+	•	Delivery status tracking.
+	•	Push notifications.
+
+5.<br><br>Integration with External Services
+	•	Payment Gateways: Integrate via REST/SDK (set up webhook endpoints like POST /webhooks/payment).
+	•	Mapping &amp; Routing: Use Google Maps Directions API and<br>&nbsp;&nbsp;&nbsp;&nbsp;cache frequent routes.
+	•	Notification Services: Integrate SMS gateways or Firebase Cloud Messaging for alerts.
+
+6.<br><br>Security,<br>&nbsp;&nbsp;&nbsp;&nbsp;Compliance &amp; DevOps
+
+6.1 Security
+	•	Authentication: Use OAuth 2.0 with JWT tokens and<br>&nbsp;&nbsp;&nbsp;&nbsp;enforce role-based access.
+	•	Encryption: HTTPS for data in transit and<br>&nbsp;&nbsp;&nbsp;&nbsp;encrypt sensitive data at rest.
+	•	Compliance: Ensure PCI-DSS for payments and<br>&nbsp;&nbsp;&nbsp;&nbsp;comply with POPIA for data protection.
+
+6.2 DevOps &amp; CI/CD
+	•	Use Git with proper branching and<br>&nbsp;&nbsp;&nbsp;&nbsp;pull requests.
+	•	Set up automated testing (unit,<br>&nbsp;&nbsp;&nbsp;&nbsp;integration,<br>&nbsp;&nbsp;&nbsp;&nbsp;E2E) with tools like Jest/Mocha (JavaScript) or PyTest (Python).
+	•	Deploy using Docker/Kubernetes with a CI/CD pipeline (GitHub Actions or Jenkins).
+	•	Monitor with Prometheus/Grafana or ELK for logging and<br>&nbsp;&nbsp;&nbsp;&nbsp;alerts.
+
+7.<br><br>Testing &amp; Quality Assurance
+	•	Unit Testing: Use relevant frameworks for backend and<br>&nbsp;&nbsp;&nbsp;&nbsp;frontend.
+	•	Integration Testing: Test APIs using Postman/Newman.
+	•	Performance Testing: Simulate load on allocation and<br>&nbsp;&nbsp;&nbsp;&nbsp;inventory endpoints.
+	•	User Acceptance Testing (UAT): Pilot with select campuses and<br>&nbsp;&nbsp;&nbsp;&nbsp;field agents,<br>&nbsp;&nbsp;&nbsp;&nbsp;gather feedback.</div>
+        
+        <h3>Generated Code:</h3>
+        <div class="code"><pre><code class="language-python">ERROR: 400</code></pre></div>
+        
+        <h3>Error Output:</h3>
+        <div class="error-output">Missing required fields</div>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+    </div>
+
+    <script>
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+        });
+    </script>
+</body>
+</html>

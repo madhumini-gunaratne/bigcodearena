@@ -3,13 +3,14 @@ bench_name: autocodearena_local
 # Local vLLM models to test
 model_list:
   # - phi-2-vllm
-  - qwen3-4b-inst-2507-vllm
+  # - qwen3-4b-inst-2507-vllm
+  - qwen25-7b-inst-vllm
 
 # Limit to 100 questions for testing
 limit: 100
 
 # Max tokens per generation
-max_tokens: 4000
+max_tokens: 8000
 
 # Temperature for generation
 temperature: 0.7
