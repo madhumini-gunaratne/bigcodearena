@@ -36,11 +36,14 @@ def format_question(question):
     
     return '<br>'.join(formatted_lines)
 
-def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None, success_uid=None, error_uid=None, data_path=None, output_file_name=None):
+def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None, success_uid=None, error_uid=None, data_path=None, output_file_name=None, title=None):
     """Generate simple HTML viewer with successful and error cases, or specific UIDs."""
     
     if data_path is None:
         data_path = "autocodearena/data/autocodearena_local/model_answer"
+    
+    # Use custom title if provided, otherwise use model_name
+    display_title = title if title else model_name
     
     results_dir = Path(f"{data_path}/{model_name}")
     
@@ -79,11 +82,17 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
             if not (uid == success_uid or uid == error_uid or uid == target_uid):
                 continue  # Skip this one
         
+        # Extract question and strip enrichment context if present
+        question = gen.get('instruction', 'N/A')
+        if "---\n\n**Related Real-World Examples from GitHub:**" in question:
+            # Strip enrichment context for cleaner display
+            question = question.split("---\n\n**Related Real-World Examples from GitHub:**")[0].strip()
+        
         case = {
             'uid': uid,
             'category': r.get('category', 'Unknown'),
             'environment': r.get('environment', 'Unknown'),
-            'question': gen.get('instruction', 'N/A'),
+            'question': question,
             'stdout': r.get('stdout', ''),
             'stderr': r.get('stderr', ''),
             'code': '',
@@ -110,10 +119,21 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
             for msg in gen['messages']:
                 if msg.get('role') == 'assistant':
                     content = msg.get('content', '')
+                    full_answer = ''
                     if isinstance(content, dict) and 'answer' in content:
-                        case['code'] = content['answer']  # Full code, no limit
+                        full_answer = content['answer']
                     else:
-                        case['code'] = str(content)  # Full code, no limit
+                        full_answer = str(content)
+                    
+                    # Try to extract code blocks (between ``` markers)
+                    import re
+                    code_blocks = re.findall(r'```(?:\w+)?\n(.*?)```', full_answer, re.DOTALL)
+                    if code_blocks:
+                        # Combine all code blocks
+                        case['code'] = '\n\n'.join(code_blocks)
+                    else:
+                        # If no code blocks, use the full answer
+                        case['code'] = full_answer
                     break
         
         # Get screenshot (only for successful cases)
@@ -171,7 +191,7 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Case Study - {model_name}</title>
+    <title>Case Study - {display_title}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <style>
@@ -219,7 +239,7 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
     </style>
 </head>
 <body>
-    <h1>{model_name}</h1>
+    <h1>{display_title}</h1>
     <p>Successful: {len(successful)} | Errors: {len(error_cases)}</p>
 """
     
@@ -305,4 +325,5 @@ if __name__ == "__main__":
     error_uid = sys.argv[6] if len(sys.argv) > 6 else None
     data_path = sys.argv[7] if len(sys.argv) > 7 else None
     output_file_name = sys.argv[8] if len(sys.argv) > 8 else None
-    create_simple_viewer(model, num_success, num_error, target_uid, success_uid, error_uid, data_path, output_file_name)
+    title = sys.argv[9] if len(sys.argv) > 9 else None
+    create_simple_viewer(model, num_success, num_error, target_uid, success_uid, error_uid, data_path, output_file_name, title)
