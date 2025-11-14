@@ -4,18 +4,32 @@
     <title>Case Studies</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 30px; background: #f5f5f5; }
-        .container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border: 1px solid #ddd; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border: 1px solid #ddd; }
         h1 { color: #333; }
-        a { display: block; padding: 12px; margin: 10px 0; background: #f0f0f0; text-decoration: none; color: #333; border-radius: 4px; }
+        h2 { font-size: 14px; color: #666; margin-top: 20px; margin-bottom: 10px; }
+        .section { margin-bottom: 20px; }
+        a { display: block; padding: 10px; margin: 8px 0; background: #f0f0f0; text-decoration: none; color: #333; border-radius: 4px; font-size: 14px; }
         a:hover { background: #e0e0e0; }
+        .comparison { background: #e8f4f8; margin-top: 10px; border-left: 4px solid #2196F3; }
+        .tag { display: inline-block; background: #2196F3; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; margin-left: 5px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Case Studies</h1>
-        <a href="case_study_qwen3-4b-inst-2507-vllm.html" target="_blank">Qwen3-4B (46 cases)</a>
-        <a href="case_study_qwen25-7b-inst-vllm.html" target="_blank">Qwen2.5-7B (47 cases)</a>
-        <a href="case_study_phi-2-vllm.html" target="_blank">Phi-2 (19 cases)</a>
+        
+        <div class="section">
+            <h2>Original Models</h2>
+            <a href="case_study_qwen3-4b-inst-2507-vllm.html" target="_blank">Qwen3-4B (46 cases)</a>
+            <a href="case_study_qwen25-7b-inst-vllm.html" target="_blank">Qwen2.5-7B (47 cases)</a>
+            <a href="case_study_phi-2-vllm.html" target="_blank">Phi-2 (19 cases)</a>
+        </div>
+        
+        <div class="section">
+            <h2>Qwen3-4B Comparison</h2>
+            <a href="case_study_qwen3-4b-inst-2507-vllm-original.html" target="_blank">Original (baseline)</a>
+            <a href="case_study_qwen3-4b-inst-2507-vllm-enriched-compare.html" target="_blank" class="comparison">Enriched (comparison) </a>
+        </div>
     </div>
 </body>
 </html>

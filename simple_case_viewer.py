@@ -36,10 +36,13 @@ def format_question(question):
     
     return '<br>'.join(formatted_lines)
 
-def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None, success_uid=None, error_uid=None):
+def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None, success_uid=None, error_uid=None, data_path=None, output_file_name=None):
     """Generate simple HTML viewer with successful and error cases, or specific UIDs."""
     
-    results_dir = Path(f"autocodearena/data/autocodearena_local/model_answer/{model_name}")
+    if data_path is None:
+        data_path = "autocodearena/data/autocodearena_local/model_answer"
+    
+    results_dir = Path(f"{data_path}/{model_name}")
     
     if not results_dir.exists():
         print(f"Error: Directory {results_dir} not found")
@@ -60,19 +63,21 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
     # Filter successful cases
     successful = []
     error_cases = []
+    
+    # Normalize empty strings to None for filtering
+    success_uid = success_uid if success_uid else None
+    error_uid = error_uid if error_uid else None
+    target_uid = target_uid if target_uid else None
+    
     for r in exec_results:
         uid = r['uid']
         gen = gen_data.get(uid, {})
         
         # Skip if specific UIDs are provided and this doesn't match
-        if success_uid and uid == success_uid:
-            pass  # Include this one
-        elif error_uid and uid == error_uid:
-            pass  # Include this one
-        elif target_uid and uid == target_uid:
-            pass  # Include this one
-        elif success_uid or error_uid or target_uid:
-            continue  # Skip if we're filtering for specific UIDs
+        if (success_uid or error_uid or target_uid):
+            # We're filtering for specific UIDs
+            if not (uid == success_uid or uid == error_uid or uid == target_uid):
+                continue  # Skip this one
         
         case = {
             'uid': uid,
@@ -132,18 +137,27 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
         else:
             successful.append(case)
     
-    # Handle specific UIDs
+    # Handle specific UIDs - override the successful/error classification
     if success_uid or error_uid:
         # Collect the requested UIDs
-        requested_uids = []
+        all_uids_to_show = []
         if success_uid:
-            requested_uids.append(success_uid)
+            all_uids_to_show.append((success_uid, 'success'))
         if error_uid:
-            requested_uids.append(error_uid)
+            all_uids_to_show.append((error_uid, 'error'))
         
-        # Filter successful to only requested UIDs (treating all as successful)
-        successful = [c for c in successful if c['uid'] in requested_uids]
-        error_cases = []  # Keep error_cases empty since we're showing both as successes
+        # Rebuild successful and error_cases based on requested UIDs
+        all_cases_by_uid = {c['uid']: c for c in successful + error_cases}
+        
+        successful = []
+        error_cases = []
+        for uid, intended_type in all_uids_to_show:
+            if uid in all_cases_by_uid:
+                case = all_cases_by_uid[uid]
+                if intended_type == 'success':
+                    successful.append(case)
+                else:
+                    error_cases.append(case)
     elif target_uid:
         # If target_uid is specified, only use that case
         pass
@@ -270,7 +284,10 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
 </html>
 """
     
-    output_file = Path(f"case_study_{model_name}.html")
+    if output_file_name is None:
+        output_file_name = f"case_study_{model_name}.html"
+    
+    output_file = Path(output_file_name)
     with open(output_file, 'w') as f:
         f.write(html)
     
@@ -286,4 +303,6 @@ if __name__ == "__main__":
     target_uid = sys.argv[4] if len(sys.argv) > 4 else None
     success_uid = sys.argv[5] if len(sys.argv) > 5 else None
     error_uid = sys.argv[6] if len(sys.argv) > 6 else None
-    create_simple_viewer(model, num_success, num_error, target_uid, success_uid, error_uid)
+    data_path = sys.argv[7] if len(sys.argv) > 7 else None
+    output_file_name = sys.argv[8] if len(sys.argv) > 8 else None
+    create_simple_viewer(model, num_success, num_error, target_uid, success_uid, error_uid, data_path, output_file_name)

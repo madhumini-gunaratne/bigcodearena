@@ -131,7 +131,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Analyze execution results")
     parser.add_argument("--model", type=str, default="qwen3-4b-inst-2507-vllm",
                        help="Model name (directory name)")
+    parser.add_argument("--data_path", type=str, default="data/autocodearena_local/model_answer",
+                       help="Path to data directory containing model results")
     args = parser.parse_args()
     
-    model_dir = f"data/autocodearena_local/model_answer/{args.model}"
+    model_dir = f"{args.data_path}/{args.model}"
     analyze_execution_results(model_dir)
