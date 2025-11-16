@@ -84,9 +84,20 @@ def create_simple_viewer(model_name, num_success=2, num_error=2, target_uid=None
         
         # Extract question and strip enrichment context if present
         question = gen.get('instruction', 'N/A')
-        if "---\n\n**Related Real-World Examples from GitHub:**" in question:
-            # Strip enrichment context for cleaner display
-            question = question.split("---\n\n**Related Real-World Examples from GitHub:**")[0].strip()
+        
+        # Strip various enrichment markers for cleaner display
+        enrichment_markers = [
+            "---\n\n**Related Real-World Examples from GitHub:**",
+            "================================================================================\n📚 **HELPFUL RESOURCES & REFERENCES**",
+            "---\n\n**ENRICHMENT CONTEXT:**",
+            "### 💬 Stack Overflow Q&A",
+            "### 📖 Official Documentation",
+        ]
+        
+        for marker in enrichment_markers:
+            if marker in question:
+                question = question.split(marker)[0].strip()
+                break
         
         case = {
             'uid': uid,

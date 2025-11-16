@@ -6,7 +6,7 @@ CONFIG_KEY="${2:-qwen3-4b-inst-2507-vllm}"  # Config key from vllm_config.yaml
 VLLM_CONFIG_FILE="autocodearena/config/vllm_config.yaml"
 VENV_DIR="$(pwd)/vllm_env"
 PYTHON="$VENV_DIR/bin/python"
-ENRICHED_TASKS_FILE="autocodearena/data/new data v1.1/enriched_tasks.json"
+ENRICHED_TASKS_FILE="autocodearena/data/new data v1.1/tasks_multisource.json"
 
 echo "=========================================="
 echo "BigCodeArena Evaluation Pipeline - Enriched"
@@ -106,7 +106,8 @@ print(f"✓ Each task includes GitHub context for better answers")
 print()
 
 # Create output directory in new data v1.1 folder for each model
-output_dir = Path("../autocodearena/data/new data v1.1") / CONFIG_KEY
+# Use "multisource" prefix to separate from original enriched results
+output_dir = Path("../autocodearena/data/new data v1.1") / f"multisource-{CONFIG_KEY}"
 output_dir.mkdir(parents=True, exist_ok=True)
 answer_file = output_dir / "generation.jsonl"
 
@@ -127,6 +128,18 @@ with open(answer_file, "w") as fout:
             # Use enriched instruction (includes GitHub context)
             instruction = question["instruction"]
             category = question.get("category", "unknown")
+            
+            # Truncate instruction if it exceeds token limit (~1500 chars = ~375 tokens buffer)
+            # Model limit is 2000 tokens, we reserve 500 for output
+            max_instruction_length = 1500
+            if len(instruction) > max_instruction_length:
+                # Keep original task + truncate resources section
+                parts = instruction.split("=" * 80)
+                if len(parts) >= 2:
+                    # Keep original task + first part of resources
+                    instruction = parts[0] + "\n\n" + parts[1][:800]
+                else:
+                    instruction = instruction[:max_instruction_length]
             
             # Call vLLM API with configuration from YAML
             payload = {
