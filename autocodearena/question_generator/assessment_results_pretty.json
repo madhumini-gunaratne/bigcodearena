@@ -1,0 +1,882 @@
+[
+  {
+    "uid": "gen_000000",
+    "instruction": "Build an interactive dashboard that visualizes real-time stock market data using live JSON feeds. Im...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is vague and lacks specific technical requirements. It mentions \"interactive dashboard\" and \"live JSON feeds\" without specifying the framework, libraries, or data sources. It does not define what constitutes \"real-time\" or how the data should be processed. The user interface elements (dropdown menus, tooltips) are mentioned, but no details about their behavior or implementation are provided. The requirement for responsiveness is generic and lacks concrete criteria (e.g., mobile-first design, breakpoints). Overall, the question is overly broad and lacks precision, making it difficult to evaluate or implement effectively."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires integrating real-time data processing, dynamic UI updates, and responsive design\u2014all of which are complex and interdependent. Implementing live JSON feeds with real-time chart updates, trend lines, and interactive tooltips involves asynchronous programming, state management, and event-driven architecture. The need to maintain responsiveness across devices adds another layer of complexity. These components must work together seamlessly, making the task significantly more challenging than typical coding problems. This is beyond basic algorithmic thinking and requires deep knowledge of frontend frameworks, real-time data handling, and user interface design."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is vague and lacks specific technical requirements. It mentions \"interactive dashboard\" and \"live JSON feeds\" without specifying the framework, libraries, or data sources. It does not define what constitutes \"real-time\" or how the data should be processed. The user interface elements (dropdown menus, tooltips) are mentioned, but no details about their behavior or implementation are provided. The requirement for responsiveness is gener..."
+  },
+  {
+    "uid": "gen_000001",
+    "instruction": "Design an HTML page that displays a clock face with a rotating second hand. The second hand should r...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-structured and provides clear, specific requirements including visual elements, interactive components, and precise technical constraints. It explicitly defines the behavior of the second hand, time display, and user interface elements. All constraints are clearly stated and aligned with the expected output format, leaving no ambiguity about what is required. The exclusion of external dependencies and non-essential features further refines the scope, ensuring the question is focused and actionable."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The question requires a solid understanding of HTML, CSS, and JavaScript to implement a realistic clock with precise timing, smooth animation, and real-time synchronization. It involves handling time updates at a second interval, calculating the correct rotation angle based on the current second, managing user input via a slider, and ensuring visual fidelity with CSS effects. These components combine to form a non-trivial interactive application that demands careful implementation to meet all specified behaviors without errors or inconsistencies."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is well-structured and provides clear, specific requirements including visual elements, interactive components, and precise technical constraints. It explicitly defines the behavior of the second hand, time display, and user interface elements. All constraints are clearly stated and aligned with the expected output format, leaving no ambiguity about what is required. The exclusion of external dependencies and non-essential features..."
+  },
+  {
+    "uid": "gen_000002",
+    "instruction": "Use Three.js to build an interactive 3D environment where users can rotate and zoom through a citysc...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is vague and lacks specific technical requirements. It mentions \"dynamic buildings\" and \"real-time weather effects\" without defining how these should be implemented (e.g., procedural generation, animation, data sources). It also fails to specify the required user interface elements, interaction methods (e.g., mouse/keyboard controls), or constraints (e.g., performance, device compatibility). The absence of clear success criteria or evaluation metrics makes it ambiguous and open to interpretation. Additionally, a complete implementation would require significant design decisions not provided in the prompt."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The task involves integrating multiple complex systems\u20143D rendering, physics-based weather simulation, dynamic lighting, and responsive user interaction\u2014all within a single framework (Three.js). These components require deep understanding of both Three.js internals and real-time simulation logic. Implementing responsive lighting based on time of day and wind direction adds significant complexity, especially without clear guidance on how to model wind or time-of-day transitions. The requirement for a \"cityscape\" implies scalability and performance considerations, which are not addressed. This makes the problem far beyond a beginner-level task and pushes it into advanced territory."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is vague and lacks specific technical requirements. It mentions \"dynamic buildings\" and \"real-time weather effects\" without defining how these should be implemented (e.g., procedural generation, animation, data sources). It also fails to specify the required user interface elements, interaction methods (e.g., mouse/keyboard controls), or constraints (e.g., performance, device compatibility). The absence of clear success criteria or e..."
+  },
+  {
+    "uid": "gen_000003",
+    "instruction": "You are developing a real-time weather monitoring application for a smart city infrastructure. Users...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is clear and provides a comprehensive context about the real-time weather monitoring application. It specifies the required features: data processing, regional averages, anomaly detection, visualization, alert generation, data validation, and logging. The scenario is well-defined and relevant to a smart city infrastructure, which helps in understanding the application domain. However, it lacks specific technical constraints (e.g., programming language, data format, real-time processing framework) and precise input/output expectations. Despite this, the overall structure and requirements are well-articulated and sufficient for a developer to understand the scope."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question involves multiple complex components: real-time data processing, anomaly detection, threshold-based alerting, data validation, logging, and dashboard visualization. These elements require integration of backend processing, real-time systems, data analysis, and user interface design. The requirement to detect specific events like thunderstorms or heatwaves adds a layer of domain-specific logic, which increases complexity. Additionally, ensuring data integrity and maintaining audit logs introduces system-level challenges. This is not a simple implementation and demands a deep understanding of both software architecture and domain knowledge."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is clear and provides a comprehensive context about the real-time weather monitoring application. It specifies the required features: data processing, regional averages, anomaly detection, visualization, alert generation, data validation, and logging. The scenario is well-defined and relevant to a smart city infrastructure, which helps in understanding the application domain. However, it lacks specific technical constraints (e.g., ..."
+  },
+  {
+    "uid": "gen_000005",
+    "instruction": "Build a real-time physics simulation engine in JavaScript that models a 2D ecosystem with the follow...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is extremely verbose and repetitive, with many redundant and overlapping requirements. While it covers a rich set of features, the lack of clear structure and the repetition of the same points (e.g., \"do not include external dependencies,\" \"self-contained,\" \"no memory leaks\") across multiple paragraphs severely undermines clarity. The specification is not well-organized, making it difficult to extract the core problem from the noise. There is no clear problem statement or boundary conditions, and the list of features feels more like a feature wishlist than a well-defined programming task. The inclusion of dozens of minor constraints and edge cases without proper grouping or prioritization makes it overwhelming and confusing for a coder to focus on the essential design. The question lacks a concise summary or a well-defined goal, which is critical for a clear coding task."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question demands a full-featured, production-grade simulation engine with real-time rendering, adaptive behavior, environmental events, user controls, data logging, and performance monitoring\u2014all within a single self-contained HTML file. It requires deep knowledge of simulation design, physics modeling, state management, performance optimization, and user interface design. The expectation of deterministic, reproducible behavior with emergent dynamics, combined with the need for scalability, error handling, and extensibility, pushes the difficulty to the highest level. Even if the core mechanics were well-defined, the sheer breadth and depth of required features\u2014especially the need for real-time canvas updates, statistical reporting, and robust error handling\u2014make this a very hard task. The requirement to implement all features from scratch without libraries, while maintaining performance and responsiveness, further increases the complexity."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is extremely verbose and repetitive, with many redundant and overlapping requirements. While it covers a rich set of features, the lack of clear structure and the repetition of the same points (e.g., \"do not include external dependencies,\" \"self-contained,\" \"no memory leaks\") across multiple paragraphs severely undermines clarity. The specification is not well-organized, making it difficult to extract the core problem from the noise. ..."
+  },
+  {
+    "uid": "gen_000006",
+    "instruction": "Write a JavaScript function that calculates the shortest path between two points on a spherical surf...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is clear and well-structured, specifying the required functionality (Haversine formula for spherical distance), input parameters (latitude and longitude in degrees), output (distance in kilometers), input validation, edge case handling (antipodal points), and additional functionality (bearing calculation). It explicitly requests comments for clarity, which enhances readability and learning value. All components are well-defined and logically connected, making it easy to understand what is expected."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The question requires a solid understanding of the Haversine formula, spherical geometry, and proper handling of geographic coordinates. It demands implementation of input validation (e.g., ensuring latitudes are between -90 and 90, longitudes between -180 and 180), edge case management (such as antipodal points where the shortest path is undefined or ambiguous), and accurate computation of both distance and bearing. These elements combine to form a moderately complex problem that goes beyond basic algorithmic thinking into applied mathematics and robustness considerations."
+      }
+    },
+    "raw_response": " \n\nNote: The rating should be one of the exact strings listed in the instructions.\n\n<response>\n  <question_quality>\n    <reasoning>The question is clear and well-structured, specifying the required functionality (Haversine formula for spherical distance), input parameters (latitude and longitude in degrees), output (distance in kilometers), input validation, edge case handling (antipodal points), and additional functionality (bearing calculation). It explicitly requests comments for clarity, whi..."
+  },
+  {
+    "uid": "gen_000007",
+    "instruction": "Write a Python script that simulates a city traffic flow using real-time input for traffic light tim...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is overly broad and lacks specific constraints. It requests a full simulation with real-time input, visual representation, physics modeling, and alert systems, without defining what constitutes \"real-time,\" what the input format is, or how the physics model should be implemented. It also doesn't specify required outputs, such as the format of the visual output or the alert conditions. The absence of clear boundaries makes it difficult to assess or implement effectively."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires integrating multiple complex systems\u2014real-time simulation, visual rendering, physics-based modeling, and real-time alerting\u2014without clear guidance on implementation details. This makes it significantly more complex than a standard coding problem, involving both algorithmic and system-level design decisions. The lack of a well-defined problem space increases the difficulty exponentially."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is overly broad and lacks specific constraints. It requests a full simulation with real-time input, visual representation, physics modeling, and alert systems, without defining what constitutes \"real-time,\" what the input format is, or how the physics model should be implemented. It also doesn't specify required outputs, such as the format of the visual output or the alert conditions. The absence of clear boundaries makes it difficult..."
+  },
+  {
+    "uid": "gen_000008",
+    "instruction": "Design a function in Python that generates a real-time interactive data visualization of a user-defi...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "good",
+        "reasoning": "The question is well-written and clearly specifies the desired functionality, including required parameters (signal type, frequency, amplitude, duration), visualization features (rolling window, dynamic color encoding, smooth interpolation), and real-time behavior. It also explicitly mentions the need for an interactive, live-updating plot that mimics modern dashboards. However, it lacks specific details on the technical implementation (e.g., backend libraries like Matplotlib or Plotly, update frequency, or how \"real-time\" is defined), which could lead to ambiguity. Despite this, the overall intent is clear and well-structured."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a deep understanding of real-time data visualization, dynamic plotting, and interactive GUI development in Python. It involves integrating multiple concepts such as signal generation, live updating of plots, rolling window processing, dynamic color encoding based on intensity, and smooth interpolation\u2014all of which demand advanced knowledge of libraries like Matplotlib or Plotly and their animation capabilities. Implementing a responsive, visually appealing live plot with proper timing and rendering is non-trivial and not typical of beginner-level problems."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is well-written and clearly specifies the desired functionality, including required parameters (signal type, frequency, amplitude, duration), visualization features (rolling window, dynamic color encoding, smooth interpolation), and real-time behavior. It also explicitly mentions the need for an interactive, live-updating plot that mimics modern dashboards. However, it lacks specific details on the technical implementation (e.g., b..."
+  },
+  {
+    "uid": "gen_000009",
+    "instruction": "Implement a function in Python that simulates a real-time traffic flow system in a city grid. The fu...",
+    "category": "creative_coding",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is extremely detailed and comprehensive, covering multiple aspects of a real-time traffic simulation including input validation, movement rules, collision handling, user interaction, visualization, edge cases, performance, and error handling. It specifies clear requirements such as grid dimensions, movement directions, ASCII representation, real-time interaction via keyboard input, logging, and deterministic behavior. However, the verbosity and overlap of requirements may make it overwhelming and slightly ambiguous in some areas (e.g., optional features like diagonals or turning rules). Despite this, the core functionality is well-defined and logically structured. The question is clear, specific, and provides sufficient context for a developer to understand what is expected. The only minor issue is the inclusion of many optional or non-core features that could distract from the primary task, but they do not undermine the clarity of the main objective."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a complex real-time simulation with multiple interacting components: grid state management, vehicle movement with direction tracking, collision detection and resolution, real-time visualization, keyboard interaction (non-blocking polling), input validation, logging, and performance considerations. It demands a deep understanding of discrete event simulation, state management, and real-time UI logic in Python. The simulation must handle edge cases (boundary conditions, full grid, collisions), maintain determinism, and operate efficiently even for moderately sized grids. While the core movement logic is straightforward, the integration of interactive input, collision handling, and real-time display adds significant complexity. The requirement for a fully self-contained, efficient, and responsive implementation without external libraries increases the difficulty. This is not a simple task and would require careful design and implementation to avoid bugs and performance issues. The difficulty is significantly higher than typical beginner or intermediate coding problems."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is extremely detailed and comprehensive, covering multiple aspects of a real-time traffic simulation including input validation, movement rules, collision handling, user interaction, visualization, edge cases, performance, and error handling. It specifies clear requirements such as grid dimensions, movement directions, ASCII representation, real-time interaction via keyboard input, logging, and deterministic behavior. However, the ver..."
+  },
+  {
+    "uid": "gen_000000",
+    "instruction": "Design a system that uses Python and Flask to create a real-time inventory management dashboard wher...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-structured and clearly specifies the required features: real-time inventory tracking, alerting, reporting, authentication, role-based access, and support for both WebSocket and polling. It explicitly mentions the technologies (Python and Flask), core components to implement, and a sample use case for demonstration. The requirements are comprehensive and cover both frontend and backend functionality, with clear user and system-level needs. However, it lacks specific constraints (e.g., database schema, alert thresholds, report formats) or performance requirements, which could lead to ambiguity. Despite this, the overall specification is comprehensive and actionable for a developer."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a full-stack web application with multiple interconnected components: user authentication, role-based access control, real-time updates via WebSocket, periodic polling, inventory tracking, alerting, and automated reporting. These components involve backend logic, database design (implied), real-time communication (WebSocket), and frontend integration, which collectively represent a high level of complexity. The integration of real-time features with secure authentication and role-based access adds significant architectural and implementation challenges. While the core concept is understandable, the breadth and depth of functionality make it a challenging task for a typical coding interview or assignment."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is well-structured and clearly specifies the required features: real-time inventory tracking, alerting, reporting, authentication, role-based access, and support for both WebSocket and polling. It explicitly mentions the technologies (Python and Flask), core components to implement, and a sample use case for demonstration. The requirements are comprehensive and cover both frontend and backend functionality, with clear user and system..."
+  },
+  {
+    "uid": "gen_000001",
+    "instruction": "Design a comprehensive Mermaid Sankey Diagram generator that transforms energy flow data from a stru...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is highly detailed and specifies input requirements, validation rules, output components, and system constraints clearly. It outlines expected features such as data parsing, validation, error reporting, visualization, and optional simplification. However, it introduces several ambiguous or unrealistic requirements (e.g., \"rendering preview with dynamic scaling\" in a sandboxed environment without specifying tools or APIs). These ambiguities may confuse implementers. Overall, it is well-structured but contains impractical expectations."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a full data processing pipeline with validation, visualization generation, real-time feedback, and dynamic rendering\u2014all within a constrained sandboxed environment. It involves complex data integrity checks, graph layout optimization, and real-time UI considerations, which go beyond typical coding challenges. The inclusion of visual rendering and dynamic scaling in a sandboxed context is particularly unrealistic and adds significant complexity."
+      }
+    },
+    "raw_response": " \n\nNote: Do not output anything else. Be concise and precise.\n\n<response>\n  <question_quality>\n    <reasoning>The question is highly detailed and specifies input requirements, validation rules, output components, and system constraints clearly. It outlines expected features such as data parsing, validation, error reporting, visualization, and optional simplification. However, it introduces several ambiguous or unrealistic requirements (e.g., \"rendering preview with dynamic scaling\" in a sandboxe..."
+  },
+  {
+    "uid": "gen_000002",
+    "instruction": "Design a mobile-first interactive dashboard that displays real-time sensor data from IoT devices, al...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is vague and lacks specific technical requirements. It mentions \"design\" and \"interactive dashboard\" without specifying programming language, framework, or implementation details. It also fails to define what constitutes \"real-time\" or \"smooth transitions,\" and the optional features are not clearly prioritized. The requirement to \"demonstrate real-time data handling\" is broad and open-ended, making it difficult to assess or evaluate objectively. There is no clear success criterion or testable outcome, which undermines its utility for a coding assessment."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question involves multiple complex components\u2014real-time data streaming via WebSocket, responsive design, dynamic filtering, live visualizations with Chart.js, and UI state management\u2014all of which require deep knowledge of frontend development, state management, and real-time systems. The integration of these components into a cohesive, self-contained solution adds significant technical complexity, especially without clear constraints or guidance. This exceeds typical coding interview or assessment scope."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is vague and lacks specific technical requirements. It mentions \"design\" and \"interactive dashboard\" without specifying programming language, framework, or implementation details. It also fails to define what constitutes \"real-time\" or \"smooth transitions,\" and the optional features are not clearly prioritized. The requirement to \"demonstrate real-time data handling\" is broad and open-ended, making it difficult to assess or evaluate ..."
+  },
+  {
+    "uid": "gen_000003",
+    "instruction": "Please build my Idea: Python-Based Network Topology Simulator  \nWhat It Does:  \nAccepts a network to...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is clear, well-defined, and specifies the input format, expected output, and key functionalities. It outlines the use of Rust, the simulation of memory allocation/deallocation, and the need for detailed reporting with call stack context. All components are explicitly described, making it easy to understand and implement."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a deep understanding of memory management in Rust, object lifecycle tracking, and simulation of garbage collection. It involves modeling complex runtime behaviors, tracking references, and analyzing heap usage over time\u2014skills typically found in advanced systems programming."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is clear, well-defined, and specifies the input format, expected output, and key functionalities. It outlines the use of Rust, the simulation of memory allocation/deallocation, and the need for detailed reporting with call stack context. All components are explicitly described, making it easy to understand and implement.</reasoning>\n    <rating>excellent</rating>\n  </question_quality>\n  <question_difficulty>\n    <reasoning>The questio..."
+  },
+  {
+    "uid": "gen_000004",
+    "instruction": "Could you use Python and Pandas to analyze a time-series dataset of stock prices, extracting key per...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-structured, clearly specifying the required analysis tasks, tools (Python and Pandas), and output formats. It explicitly mentions key performance indicators, data preprocessing steps (missing values, outliers), rolling windows, exponential weighting, visualization requirements, and metadata. All components are logically connected and provide sufficient detail for a candidate to understand the scope without ambiguity."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a comprehensive understanding of time-series analysis, Pandas time indexing, robust statistical methods for handling missing data and outliers, exponential weighted moving averages, and advanced data visualization with annotations. It combines multiple complex concepts and expects implementation of both analytical and graphical components, which demands strong programming and domain knowledge."
+      }
+    },
+    "raw_response": " \n\nNote: The rating must be one of the listed options. Do not add any extra text.\n\n<response>\n  <question_quality>\n    <reasoning>The question is well-structured, clearly specifying the required analysis tasks, tools (Python and Pandas), and output formats. It explicitly mentions key performance indicators, data preprocessing steps (missing values, outliers), rolling windows, exponential weighting, visualization requirements, and metadata. All components are logically connected and provide suffi..."
+  },
+  {
+    "uid": "gen_000005",
+    "instruction": "Develop a real-time collaborative whiteboard application using React.js that supports multiple users...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is extremely detailed and specifies every required feature, including edge cases, performance requirements, and architectural constraints. It clearly defines the scope, expectations, and technical boundaries (e.g., no external libraries, no backend, real-time synchronization, security, scalability). The instructions are well-structured, logically ordered, and leave no ambiguity about what is expected. However, the verbosity may slightly obscure the core problem, but the clarity in requirements and constraints is outstanding. The note about senior-level expertise and the emphasis on architectural thinking further solidify its precision and professionalism."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a full real-time collaborative whiteboard with complex features like concurrency control, undo/redo across users, conflict resolution, network resilience, and performance under high load\u2014all without external libraries or backend support. It demands deep knowledge of React\u2019s state management, event loops, batched updates, and real-time systems. The requirement to build from scratch with native canvas rendering, handle race conditions, and ensure zero visual lag at scale pushes the difficulty to the extreme. Even for a senior developer, this is a highly complex, production-grade system that exceeds typical React challenges."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is extremely detailed and specifies every required feature, including edge cases, performance requirements, and architectural constraints. It clearly defines the scope, expectations, and technical boundaries (e.g., no external libraries, no backend, real-time synchronization, security, scalability). The instructions are well-structured, logically ordered, and leave no ambiguity about what is expected. However, the verbosity may sligh..."
+  },
+  {
+    "uid": "gen_000006",
+    "instruction": "Design a real-time dashboard that visualizes system performance metrics (CPU, memory, disk I/O, netw...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is highly vague and lacks specific technical requirements. It mentions \"a modern web framework\" and \"reactive data binding\" without specifying which ones, and does not define what constitutes \"accurate\" or \"responsive\" data. It also fails to specify data sources, network constraints, or error handling. The broad scope and lack of constraints make it ambiguous and open-ended, making it difficult to assess or evaluate a solution objectively. There is no clear success criterion or measurable outcome to judge correctness."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires designing a full-scale real-time dashboard with multiple interactive components, real-time data streaming, live updates, and alerting systems\u2014all of which are highly complex and involve distributed systems, real-time data processing, frontend frameworks, and backend architecture. It demands deep knowledge of web technologies, scalability, and system robustness, far beyond typical coding exercises. The integration of multiple features like responsive design, visualizations, and alerting adds significant complexity."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is highly vague and lacks specific technical requirements. It mentions \"a modern web framework\" and \"reactive data binding\" without specifying which ones, and does not define what constitutes \"accurate\" or \"responsive\" data. It also fails to specify data sources, network constraints, or error handling. The broad scope and lack of constraints make it ambiguous and open-ended, making it difficult to assess or evaluate a solution objecti..."
+  },
+  {
+    "uid": "gen_000007",
+    "instruction": "Design a comprehensive system to analyze and visualize climate change data from global temperature r...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "poor",
+        "reasoning": "The question is extremely detailed and comprehensive, covering data processing, validation, visualization, security, scalability, and user experience. However, it is overly verbose and repetitive, with many overlapping or redundant requirements (e.g., multiple mentions of logging, error handling, validation, and compliance). While the intent is clear\u2014building a full-stack climate data analysis system\u2014the lack of constraints (e.g., specific tools, data format, or performance metrics) and the absence of a well-defined scope make it ambiguous. The question fails to specify boundaries, such as whether it's about a single function, a prototype, or a production system, and lacks a clear entry point or success metric. This ambiguity reduces clarity and makes it difficult for developers to focus on core requirements."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question demands a full-stack, end-to-end system with advanced features in data science, machine learning, real-time processing, distributed computing, security, and user interface design. It includes requirements spanning data ingestion, anomaly detection, statistical modeling, interactive visualization, compliance, performance optimization, and deployment. While the core task (analyzing temperature anomalies) is grounded in climate science, the breadth and depth of requirements far exceed a typical coding problem. It is not feasible to implement in a single coding session or within standard interview or competition constraints. The complexity is not just in the algorithm but in system architecture, integration, and engineering practices."
+      }
+    },
+    "raw_response": " XML\n\n```xml\n<response>\n  <question_quality>\n    <reasoning>The question is extremely detailed and comprehensive, covering data processing, validation, visualization, security, scalability, and user experience. However, it is overly verbose and repetitive, with many overlapping or redundant requirements (e.g., multiple mentions of logging, error handling, validation, and compliance). While the intent is clear\u2014building a full-stack climate data analysis system\u2014the lack of constraints (e.g., speci..."
+  },
+  {
+    "uid": "gen_000008",
+    "instruction": "Please build my Idea: Real-time Data Pipeline Visualization Tool\nWhat It Does:\nAccepts a stream of r...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "poor",
+        "reasoning": "The question is vague and lacks specific technical requirements. It describes a high-level idea without defining input/output formats, data structures, visualization library constraints, or implementation details. Key components like event format, data rate, update mechanism, or UI interactivity are missing. While the intent is clear, the lack of precision makes it ambiguous for developers to implement a concrete solution. The mention of \"self-contained app\" and \"lightweight visualization library\" is insufficient without specifying which library or API to use. Overall, the description is more of a project proposal than a well-defined coding task."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The difficulty is high due to the need to implement real-time data processing, event buffering, dynamic UI updates, and state management across multiple streams. These involve concurrency, timing precision (500ms refresh), event grouping, and responsive UI rendering\u2014all of which require careful design and debugging. While the core concept is accessible, the integration of real-time streaming with live visualization introduces significant complexity, especially in ensuring smooth performance and accurate time-based grouping. The lack of constraints increases the risk of overcomplication or divergent solutions."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is vague and lacks specific technical requirements. It describes a high-level idea without defining input/output formats, data structures, visualization library constraints, or implementation details. Key components like event format, data rate, update mechanism, or UI interactivity are missing. While the intent is clear, the lack of precision makes it ambiguous for developers to implement a concrete solution. The mention of \"self-co..."
+  },
+  {
+    "uid": "gen_000009",
+    "instruction": "Design a Python Django application that enables users to define and manage a project backlog using S...",
+    "category": "diagram_creation",
+    "assessment": {
+      "question_quality": {
+        "rating": "good",
+        "reasoning": "The question is comprehensive and detailed, specifying core features like sprint management, user stories, task assignment, progress tracking, filtering, export functionality, and real-time updates via WebSockets. It clearly outlines the required components and user interactions. However, it lacks specific constraints (e.g., database schema, authentication requirements, UI framework preferences, or performance expectations), which may lead to ambiguity in implementation. Despite this, the overall structure and scope are well-defined and accessible to a developer familiar with Django and Scrum practices."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a full Django application with multiple interconnected features including real-time updates via WebSockets, Gantt chart visualization, data filtering, and export functionality. These components involve advanced topics such as Django Channels, frontend data visualization (e.g., using Chart.js), database modeling, and real-time event handling. The integration of these features at scale increases the complexity significantly, making it a challenging task for even experienced developers."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is comprehensive and detailed, specifying core features like sprint management, user stories, task assignment, progress tracking, filtering, export functionality, and real-time updates via WebSockets. It clearly outlines the required components and user interactions. However, it lacks specific constraints (e.g., database schema, authentication requirements, UI framework preferences, or performance expectations), which may lead to amb..."
+  },
+  {
+    "uid": "gen_000000",
+    "instruction": "Implement a standalone Python script using PyGame to simulate a procedurally generated maze with rec...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is very clearly written, specifying all required components: procedural generation using a cellular automaton, grid size, rules for state transitions, player movement, collision detection, win condition, rendering, and deterministic behavior. It explicitly defines the core algorithm (cellular automaton), the initial and final states, the player's role, and the required features (no external libraries, self-contained, deterministic, clean code). The requirements are well-structured, unambiguous, and comprehensive, covering both generation and interaction aspects. The constraints (no external libraries, deterministic, only PyGame) are clearly stated, and the expected output (win message) is defined. The instructions are logically organized and avoid ambiguity. The only minor point is that \"infection\" might be interpreted differently, but the context makes it clear. Overall, the question is exceptionally well-specified and complete."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The question requires implementing a cellular automaton with a specific rule (state transitions based on neighbors), generating a 20x20 grid, managing real-time player movement with collision detection, and integrating a win condition. The procedural generation is non-trivial due to the need for a deterministic cellular automaton rule and proper neighbor counting. The player movement logic must be carefully implemented to avoid stepping into infected cells, and the game loop must handle state updates, rendering, and input in real time. The requirement to implement a noise-like function (even if simple) adds complexity. The integration of multiple systems (generation, player, state updates, rendering) without external libraries makes it moderately complex. While the core algorithm is accessible, the combination of deterministic generation, real-time interaction, and proper collision handling requires solid programming skills. It is more complex than basic maze generation but not at the level of advanced algorithms or data structures. Overall, it sits in the medium to hard range, but given the constraints and the need for clean, self-contained code, it is best classified as hard."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is very clearly written, specifying all required components: procedural generation using a cellular automaton, grid size, rules for state transitions, player movement, collision detection, win condition, rendering, and deterministic behavior. It explicitly defines the core algorithm (cellular automaton), the initial and final states, the player's role, and the required features (no external libraries, self-contained, deterministic, cl..."
+  },
+  {
+    "uid": "gen_000001",
+    "instruction": "Develop a Java-based real-time traffic management system for a smart city. The application should si...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is highly detailed and specifies multiple components: traffic light states, decentralized control, vehicle routing, real-time visualization, logging, simulation controls, and emergency override modes. It clearly defines the required functionality, including state transitions, timing patterns, and interaction between intersections. However, it lacks specific constraints such as performance requirements (e.g., number of intersections, vehicle count), input/output formats, or technical limitations (e.g., GUI framework, threading model). While the intent is clear, the absence of boundaries makes it prone to over-engineering or ambiguity in implementation. Despite this, the overall structure and scope are well-defined and comprehensive."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a full-scale, real-time simulation system with multiple interacting components: decentralized traffic light control, dynamic vehicle routing based on conditions, real-time visualization, logging, and user controls. It involves complex state management, concurrency (for real-time updates), event-driven simulation, and potentially GUI development. The integration of multiple subsystems\u2014traffic light logic, vehicle movement, congestion calculation, and visualization\u2014demands deep understanding of software architecture, real-time systems, and system design. This level of complexity, especially with scalability and realism (e.g., slight timing variations), places it firmly in the very hard category."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is highly detailed and specifies multiple components: traffic light states, decentralized control, vehicle routing, real-time visualization, logging, simulation controls, and emergency override modes. It clearly defines the required functionality, including state transitions, timing patterns, and interaction between intersections. However, it lacks specific constraints such as performance requirements (e.g., number of intersections, v..."
+  },
+  {
+    "uid": "gen_000002",
+    "instruction": "Write a Python script that creates a PyGame environment where players navigate a lunar surface by co...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "average",
+        "reasoning": "The question is clear in describing the game scenario and specifies key elements like player navigation, collecting oxygen bottles, and avoiding temperature hazards. However, it lacks specific technical requirements (e.g., game loop structure, input handling, collision detection, scoring system, or exit conditions). It also doesn't define the environment size, object placement, or win/lose conditions. While the general idea is understandable, the absence of concrete implementation details makes it ambiguous for a programmer to fully implement without assumptions. Overall, it's a good starting point but not fully precise."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The question involves implementing a full interactive game with game loop, physics (movement), collision detection, and state management, which requires understanding of PyGame fundamentals, object interaction logic, and user input handling. It goes beyond simple scripting and involves multiple interconnected components, making it more complex than basic tasks. While the core concepts are accessible, the integration of multiple features increases the difficulty significantly."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is clear in describing the game scenario and specifies key elements like player navigation, collecting oxygen bottles, and avoiding temperature hazards. However, it lacks specific technical requirements (e.g., game loop structure, input handling, collision detection, scoring system, or exit conditions). It also doesn't define the environment size, object placement, or win/lose conditions. While the general idea is understandable, the..."
+  },
+  {
+    "uid": "gen_000003",
+    "instruction": "Write a Python script that creates a PyGame-based space invaders game with dynamically generated ene...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is vague and lacks specific details about the enemy generation rules, collision detection methods, or physics-based movement. It does not specify required features, constraints, or success criteria, making it difficult to evaluate or implement. The term \"physics-based movement\" is ambiguous and not clearly defined in the context of game development. Overall, the prompt is overly broad and lacks structure, which makes it unsuitable for a well-defined coding task."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The required implementation involves multiple complex components\u2014dynamic enemy pattern generation, physics-based movement, and robust collision detection\u2014all of which require deep understanding of PyGame, game design principles, and real-time simulation. These elements combine to form a highly non-trivial problem that goes beyond basic programming tasks and demands significant expertise in both game development and physics simulation. This makes the difficulty level extremely high."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is vague and lacks specific details about the enemy generation rules, collision detection methods, or physics-based movement. It does not specify required features, constraints, or success criteria, making it difficult to evaluate or implement. The term \"physics-based movement\" is ambiguous and not clearly defined in the context of game development. Overall, the prompt is overly broad and lacks structure, which makes it unsuitable for..."
+  },
+  {
+    "uid": "gen_000004",
+    "instruction": "Implement a blockchain-based voting system where users can submit votes, and votes are cryptographic...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "average",
+        "reasoning": "The question is conceptually clear and relevant, with a strong real-world application and technical depth. However, it lacks specific details on cryptographic implementation (e.g., key generation, signature verification), blockchain structure (e.g., block format, linking), and edge cases. This ambiguity makes it difficult to assess candidate performance objectively, reducing its precision and testability."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The question requires integrating blockchain fundamentals with cryptographic security, including digital signatures, timestamping, and integrity validation. These concepts are complex and interdependent, demanding a strong grasp of both data structures and cryptographic principles. Implementing a working simulation in JavaScript without external libraries adds significant cognitive load."
+      }
+    },
+    "raw_response": " The provided text appears to be a repeated and redundant copy of the same original question, with no new content or variation introduced. Despite the repetition, the core question remains unchanged: \"Implement a blockchain-based voting system where users can submit votes, and votes are cryptographically secured and immutable. Include functionality to verify vote integrity and detect tampering. Use JavaScript to simulate the core blockchain structure and provide a method to add new votes with ti..."
+  },
+  {
+    "uid": "gen_000005",
+    "instruction": "Simulate a fleet of 50 autonomous robots navigating a dynamic warehouse environment, where each robo...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is vague and lacks specific details such as the exact algorithms for the decentralized consensus protocol, the rules for collision avoidance, the format of item zones or delivery locations, and how energy consumption is measured. It also does not specify required inputs, outputs, or constraints. The mention of \"real-time visual feedback\" is ambiguous without defining the visualization library or expected output format. Overall, the problem is too broad and open-ended for a well-defined coding task."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The problem involves multiple complex components: real-time simulation, multi-agent coordination, collision avoidance, decentralized consensus protocols, energy optimization, and real-time visualization. These elements combine to form a highly complex system that goes far beyond basic programming tasks and requires deep knowledge in robotics, distributed systems, and simulation frameworks. This makes it extremely difficult to implement correctly and efficiently."
+      }
+    },
+    "raw_response": " \n\nNote: Do not add any additional text or comments outside the XML structure.\n\n<response>\n  <question_quality>\n    <reasoning>The question is vague and lacks specific details such as the exact algorithms for the decentralized consensus protocol, the rules for collision avoidance, the format of item zones or delivery locations, and how energy consumption is measured. It also does not specify required inputs, outputs, or constraints. The mention of \"real-time visual feedback\" is ambiguous without..."
+  },
+  {
+    "uid": "gen_000006",
+    "instruction": "Create a Python-based simulation of a sound-emitting robot navigating a grid-based maze, where the r...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "average",
+        "reasoning": "The question is detailed and specifies multiple components: sound propagation, sensor systems, reflection and absorption, real-time updates, pathfinding, and dynamic maze changes. However, it lacks precise definitions (e.g., grid size, sound speed, absorption coefficients, or pathfinding algorithm specifics) and does not clarify how the robot updates its position or how echoes are interpreted. These ambiguities reduce clarity and make implementation challenging without assumptions. Despite its richness, the lack of concrete constraints or parameters makes it hard to evaluate or implement reliably."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question combines multiple advanced concepts\u2014real-time sensor modeling, physics-based sound propagation, dynamic environment management, and pathfinding\u2014requiring integration of physics, AI, and simulation logic. Implementing a system that accounts for echo time, absorption, reflection, and adaptive maze changes demands deep understanding and significant code complexity. This is far beyond basic programming tasks and involves non-trivial engineering decisions."
+      }
+    },
+    "raw_response": " \n\nNote: Do not include any markdown, code blocks, or other formatting beyond the specified XML structure.\n\n<response>\n  <question_quality>\n    <reasoning>The question is detailed and specifies multiple components: sound propagation, sensor systems, reflection and absorption, real-time updates, pathfinding, and dynamic maze changes. However, it lacks precise definitions (e.g., grid size, sound speed, absorption coefficients, or pathfinding algorithm specifics) and does not clarify how the robot ..."
+  },
+  {
+    "uid": "gen_000007",
+    "instruction": "Write a Python script that creates a PyGame \"neon cybernetic\" survival game with AI enemies that ada...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is highly vague and lacks specific technical requirements. It does not define what \"neon cybernetic\" means, how AI adaptation should work (e.g., machine learning, rule-based), or what gameplay mechanics are required. It also does not specify constraints like game size, player controls, or enemy AI behavior rules. Without clear specifications, it's impossible to assess or implement the request accurately."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The requested game involves advanced topics such as AI behavior adaptation, real-time player pattern analysis, and a full game loop with graphics and interaction, which far exceed the scope of a typical coding exercise. Implementing adaptive AI with meaningful behavior changes based on player movement patterns requires deep knowledge of game design, AI algorithms, and PyGame integration. This is not a simple implementation and would require significant time and resources."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is highly vague and lacks specific technical requirements. It does not define what \"neon cybernetic\" means, how AI adaptation should work (e.g., machine learning, rule-based), or what gameplay mechanics are required. It also does not specify constraints like game size, player controls, or enemy AI behavior rules. Without clear specifications, it's impossible to assess or implement the request accurately.</reasoning>\n    <rating>very p..."
+  },
+  {
+    "uid": "gen_000008",
+    "instruction": "design and implement a strategy game titled \"Realm Rift\". In this game, players must manage three di...",
+    "category": "game_development",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is overly broad and lacks specific technical requirements. It calls for a full game implementation with no defined constraints such as programming language, input/output methods, or data structures. It also does not specify the scope of the \"strategy\" or define what constitutes a \"valid\" action or how environmental events are generated. The lack of boundaries makes it impossible to assess or evaluate objectively. The request for \"visual feedback\" introduces a non-technical aspect (animation) that is not feasible in a coding context without additional context."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires designing and implementing a full game engine with dynamic state management, resource simulation, environmental event systems, and turn-based decision logic\u2014all of which are highly complex. It involves managing state transitions, constraints, and real-time updates across multiple interacting systems. The breadth of functionality, combined with the lack of clear boundaries, makes it effectively impossible to solve within a standard coding interview or assignment context."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is overly broad and lacks specific technical requirements. It calls for a full game implementation with no defined constraints such as programming language, input/output methods, or data structures. It also does not specify the scope of the \"strategy\" or define what constitutes a \"valid\" action or how environmental events are generated. The lack of boundaries makes it impossible to assess or evaluate objectively. The request for \"vis..."
+  },
+  {
+    "uid": "gen_000000",
+    "instruction": "Implement a Python function to find the minimum number of operations required to make all elements i...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is clearly written and specifies the task, allowed operations, and required edge cases. It explicitly asks for an efficient algorithm and an explanation of how it works, which ensures a comprehensive solution. The problem is well-defined with no ambiguity in the goal or constraints."
+      },
+      "question_difficulty": {
+        "rating": "medium",
+        "reasoning": "The problem requires understanding of patterns in binary arrays and the effect of flipping contiguous subarrays. While it may seem simple at first, the optimal strategy involves recognizing that each flip operation can be optimized by considering transitions between 0s and 1s. The solution hinges on identifying the number of \"segments\" of consecutive 0s, which directly maps to the minimum number of operations. This requires insight into the structure of the array and efficient pattern recognition, making it more complex than basic problems."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is clearly written and specifies the task, allowed operations, and required edge cases. It explicitly asks for an efficient algorithm and an explanation of how it works, which ensures a comprehensive solution. The problem is well-defined with no ambiguity in the goal or constraints.</reasoning>\n    <rating>excellent</rating>\n  </question_quality>\n  <question_difficulty>\n    <reasoning>The problem requires understanding of patterns in ..."
+  },
+  {
+    "uid": "gen_000001",
+    "instruction": "Design a function that implements a lock-free queue for producing and consuming messages between thr...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is overly broad and includes requirements that are not feasible or well-defined in a standard programming context. It asks for a lock-free queue with dynamic resizing, memory corruption detection (which is not reliably possible in C/C++ without runtime checks), and a performance metric that would require external instrumentation. These elements are either unrealistic or outside the scope of typical coding problems. The mention of \"dangling pointers\" as a detectable issue in a lock-free setting is problematic since memory corruption detection is not something that can be reliably implemented in a concurrent environment without significant runtime overhead or external tools. Additionally, the performance metric request is vague and not something that can be directly returned by a function. The question lacks clear input/output specifications and does not define what the function should return or how it should be tested. Overall, the specification is ambiguous and mixes real-world concerns with theoretical or impractical requirements."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires knowledge of advanced concurrency concepts (lock-free programming, atomic operations, memory ordering), dynamic memory management, and error handling in concurrent environments. It also demands the implementation of a feature (memory corruption detection) that is not feasible or practical in a real-world setting due to the nature of pointer arithmetic and memory corruption. The combination of these elements pushes the difficulty to a very high level, making it unsuitable for most coding interviews or learning contexts. The performance metric requirement further complicates the issue, as it introduces external instrumentation and measurement that cannot be directly achieved within a function."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is overly broad and includes requirements that are not feasible or well-defined in a standard programming context. It asks for a lock-free queue with dynamic resizing, memory corruption detection (which is not reliably possible in C/C++ without runtime checks), and a performance metric that would require external instrumentation. These elements are either unrealistic or outside the scope of typical coding problems. The mention of \"dan..."
+  },
+  {
+    "uid": "gen_000002",
+    "instruction": "Write a Python function that implements the Two Sum problem with a twist: given a sorted array of in...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is clearly written, specifying the input (sorted array, target sum), output (list of tuples with indices), required algorithm (two-pointer technique), time complexity (O(n log n)), and constraints (no nested loops, handle edge cases). It explicitly defines the problem with a well-defined goal and includes important details like the sorted nature of the input, which is crucial for the two-pointer approach. The mention of edge cases ensures robustness. Overall, the problem is well-specified and avoids ambiguity."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The problem requires understanding of the two-pointer technique on a sorted array, correct handling of edge cases (e.g., arrays with fewer than two elements, no valid pairs), and ensuring the solution meets the time complexity requirement without nested loops. While the core concept is medium-level, the requirement to maintain O(n log n) time complexity (which implies sorting is not allowed since the input is already sorted) and to return indices rather than values adds nuance. The need to avoid nested loops and correctly manage unique pairs introduces subtle implementation challenges. Thus, the difficulty is higher than basic two-sum due to these constraints."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is clearly written, specifying the input (sorted array, target sum), output (list of tuples with indices), required algorithm (two-pointer technique), time complexity (O(n log n)), and constraints (no nested loops, handle edge cases). It explicitly defines the problem with a well-defined goal and includes important details like the sorted nature of the input, which is crucial for the two-pointer approach. The mention of edge cases ens..."
+  },
+  {
+    "uid": "gen_000005",
+    "instruction": "You are given a grid of size m x n, initially filled with water. You are given a sequence of operati...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is clearly written, well-structured, and provides a precise definition of the problem. It includes a detailed example, specifies the required output format, and explicitly highlights the need for an efficient, incremental update mechanism rather than brute-force recalculations. The note about dynamic connectivity and the bonus question reinforce the core algorithmic challenge. All necessary constraints and edge cases are addressed, making it comprehensive and suitable for assessing deep understanding of data structures and dynamic updates."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The problem requires a deep understanding of dynamic connectivity, union-find data structures, and incremental updates. It demands efficient handling of large input sizes (up to 10,000 operations on a 1000x1000 grid) without resorting to naive flood-fill after each operation. The solution must track connected components in real time, handle edge cases like isolated cells or full grids, and maintain scalability. This level of complexity goes beyond basic graph traversal and requires sophisticated algorithmic design, placing it in the hard category."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is clearly written, well-structured, and provides a precise definition of the problem. It includes a detailed example, specifies the required output format, and explicitly highlights the need for an efficient, incremental update mechanism rather than brute-force recalculations. The note about dynamic connectivity and the bonus question reinforce the core algorithmic challenge. All necessary constraints and edge cases are addressed, ma..."
+  },
+  {
+    "uid": "gen_000006",
+    "instruction": "You are given a list of N integers representing the heights of a series of buildings. A rainwater tr...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is clearly written and provides a precise definition of the problem. It includes a concrete example to illustrate the concept, specifies the input format (list of integers), output (total volume), and the method to calculate water trapping (minimum of max left and right minus current height). All necessary details are present, and the problem is well-known in programming interviews, making it easy to understand and implement. The example helps solidify the understanding."
+      },
+      "question_difficulty": {
+        "rating": "medium",
+        "reasoning": "The problem requires understanding of the trapping rainwater algorithm, which involves identifying the maximum heights on both sides for each position and computing the trapped water. While the concept is well-known, the implementation requires careful handling of edge cases and efficient computation (e.g., using two pointers or dynamic programming). A naive O(n\u00b2) approach is possible, but an optimal O(n) solution is expected in interviews. This makes the difficulty medium to hard depending on the candidate's familiarity with the algorithm."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is clearly written and provides a precise definition of the problem. It includes a concrete example to illustrate the concept, specifies the input format (list of integers), output (total volume), and the method to calculate water trapping (minimum of max left and right minus current height). All necessary details are present, and the problem is well-known in programming interviews, making it easy to understand and implement. The exa..."
+  },
+  {
+    "uid": "gen_000007",
+    "instruction": "Implement a Python algorithm to find the shortest path in a weighted directed graph using Dijkstra's...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is generally clear in its intent to implement Dijkstra's algorithm, but it contains contradictory and ambiguous requirements. Dijkstra's algorithm does not handle negative edge weights\u2014this is a fundamental limitation, and the question explicitly asks to \"detect and handle negative edge weights appropriately,\" which is incorrect and misleading. Additionally, the request to \"explore optimization techniques\" for sparse graphs and large-scale inputs is vague and open-ended, lacking specific constraints or performance metrics. The phrasing \"ensure the solution efficiently handles sparse graphs\" is reasonable, but the inclusion of negative weights undermines the problem's validity. Overall, the question is poorly specified due to factual inaccuracies and lack of clear boundaries."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The difficulty is high due to the inclusion of contradictory requirements (e.g., handling negative weights in Dijkstra's algorithm), which makes the problem technically impossible to solve as stated. Even if one were to ignore the contradiction, the request for optimization techniques for large-scale sparse graphs introduces significant complexity, requiring advanced knowledge of data structures (e.g., Fibonacci heaps, adjacency list optimization), memory management, and performance tuning. The open-ended nature of the optimization part further increases the difficulty, making it more of a research-level problem than a standard coding task."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is generally clear in its intent to implement Dijkstra's algorithm, but it contains contradictory and ambiguous requirements. Dijkstra's algorithm does not handle negative edge weights\u2014this is a fundamental limitation, and the question explicitly asks to \"detect and handle negative edge weights appropriately,\" which is incorrect and misleading. Additionally, the request to \"explore optimization techniques\" for sparse graphs and lar..."
+  },
+  {
+    "uid": "gen_000008",
+    "instruction": "Design a secure and efficient password manager in C that stores encrypted passwords using AES-256-CB...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-specified, clearly outlining required cryptographic functions (AES-256-CBC, PBKDF2, HMAC-SHA256), data operations (add, modify, delete), and security requirements. It explicitly mentions key components like salt, iteration count, and data integrity. However, it lacks specific constraints (e.g., file format, user interface, error handling, or input validation), which could lead to ambiguity. Despite this, the core requirements are unambiguous and technically sound, making the question clear and properly scoped for a programming task."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementation of multiple advanced cryptographic protocols (AES-CBC with proper padding, PBKDF2 key derivation, HMAC for integrity), secure memory handling, and a structured data management system. It also demands a deep understanding of cryptographic best practices, such as secure key derivation, proper initialization vectors, and preventing side-channel attacks. These components combine to form a complex, real-world security application, which exceeds typical beginner or intermediate levels."
+      }
+    },
+    "raw_response": " \n\nNote: The rating should be one of the provided options and must be in the correct tag.\n\n<response>\n  <question_quality>\n    <reasoning>The question is well-specified, clearly outlining required cryptographic functions (AES-256-CBC, PBKDF2, HMAC-SHA256), data operations (add, modify, delete), and security requirements. It explicitly mentions key components like salt, iteration count, and data integrity. However, it lacks specific constraints (e.g., file format, user interface, error handling, ..."
+  },
+  {
+    "uid": "gen_000009",
+    "instruction": "Implement a lock-free queue using a linked list with atomic operations to support concurrent produce...",
+    "category": "problem_solving",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is highly detailed and specifies technical requirements such as lock-free design, circular buffer, wait-free consumer operations, bounded capacity, atomic operations via compare-and-swap, and memory reclamation. It clearly defines the desired functionality and constraints. However, it lacks specific inputs/outputs, edge cases, or performance metrics, which could make implementation ambiguous. Despite this, the overall specification is precise and technically sound for an advanced systems programming context."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires deep knowledge of concurrent programming, atomic operations, memory models, and low-level memory management. Implementing a lock-free, wait-free queue with circular buffer and memory reclamation involves complex synchronization logic, hazard pointers, or generational reclamation, and is beyond the scope of basic data structures. It demands expertise in both algorithm design and systems-level programming."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is highly detailed and specifies technical requirements such as lock-free design, circular buffer, wait-free consumer operations, bounded capacity, atomic operations via compare-and-swap, and memory reclamation. It clearly defines the desired functionality and constraints. However, it lacks specific inputs/outputs, edge cases, or performance metrics, which could make implementation ambiguous. Despite this, the overall specification..."
+  },
+  {
+    "uid": "gen_000000",
+    "instruction": "Create a Python application using Flask and Pandas to analyze and visualize election results from mu...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is comprehensive and specifies multiple technical requirements, including data ingestion, cleaning, visualization, error handling, logging, scalability, and testing. It clearly outlines the expected functionality and technical stack (Flask, Pandas), as well as specific outputs (vote shares, margins of victory, etc.). However, it lacks precise constraints such as file formats, data schema, or exact filtering criteria, which could lead to ambiguity. Despite this, the overall structure and intent are well-defined, making it clear what is expected from the developer."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a full-stack application with integration of data processing, real-time filtering, visualization, error handling, and scalability considerations. It demands deep knowledge of Flask for web development, Pandas for data manipulation, and performance optimization for handling large datasets. Additionally, implementing automated validation, logging, and unit testing adds significant complexity. These combined requirements make it a highly non-trivial challenge suitable for experienced developers."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is comprehensive and specifies multiple technical requirements, including data ingestion, cleaning, visualization, error handling, logging, scalability, and testing. It clearly outlines the expected functionality and technical stack (Flask, Pandas), as well as specific outputs (vote shares, margins of victory, etc.). However, it lacks precise constraints such as file formats, data schema, or exact filtering criteria, which could le..."
+  },
+  {
+    "uid": "gen_000001",
+    "instruction": "Simulate a wireless sensor network using a simplified version of the AODV routing protocol, where no...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "average",
+        "reasoning": "The question is generally clear in its intent but lacks specific technical details such as the exact metrics for link quality, packet loss rate calculation, node movement model (e.g., random walk, Brownian motion), and how route discovery should be implemented (e.g., hello messages, route request, route reply). It also doesn't specify the network topology, number of nodes, time steps, or simulation duration. These omissions make it difficult to implement a precise and consistent solution. While the overall goal is understandable, the absence of concrete parameters and algorithmic details reduces its clarity and specification quality."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a full simulation of a wireless sensor network with dynamic route discovery using AODV, incorporating node movement and link quality evaluation. This involves multiple complex components: routing protocol logic, probabilistic packet loss modeling, real-time node movement, and event-driven simulation. It demands a deep understanding of networking protocols, simulation frameworks, and Python programming for managing state, timing, and event handling. The integration of dynamic behavior and real-time decision-making increases the difficulty significantly."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is generally clear in its intent but lacks specific technical details such as the exact metrics for link quality, packet loss rate calculation, node movement model (e.g., random walk, Brownian motion), and how route discovery should be implemented (e.g., hello messages, route request, route reply). It also doesn't specify the network topology, number of nodes, time steps, or simulation duration. These omissions make it difficult to i..."
+  },
+  {
+    "uid": "gen_000002",
+    "instruction": "Design a Python-based system using FastAPI and Redis to build a real-time user activity monitoring p...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is overly broad and lacks clear, specific requirements. It asks for a full system design with multiple components (FastAPI, Redis, real-time monitoring, visualization, load testing, cloud compatibility) without defining inputs, outputs, success criteria, or constraints. The absence of specific data models, time windows for anomaly detection, or performance metrics makes it difficult to evaluate or implement. While the intent is clear, the vagueness in specifications renders it unactionable for a focused coding exercise."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The required implementation spans multiple domains\u2014distributed systems, real-time processing, anomaly detection, web visualization, and performance validation\u2014each requiring deep knowledge and integration. It demands expertise in system architecture, distributed databases, backend development, and testing under load. The lack of boundaries or scope makes it impossible to assign a single difficulty level, but given the breadth and depth, it exceeds typical coding interview expectations and would be considered extremely complex in a real-world deployment context."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is overly broad and lacks clear, specific requirements. It asks for a full system design with multiple components (FastAPI, Redis, real-time monitoring, visualization, load testing, cloud compatibility) without defining inputs, outputs, success criteria, or constraints. The absence of specific data models, time windows for anomaly detection, or performance metrics makes it difficult to evaluate or implement. While the intent is clear,..."
+  },
+  {
+    "uid": "gen_000003",
+    "instruction": "Build a distributed messaging system in Rust to facilitate real-time collaboration in remote work en...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is broad and ambitious, covering multiple complex domains such as distributed systems, real-time collaboration, peer-to-peer networking, conflict resolution, and cryptographic authentication. While it outlines key components, it lacks specific requirements like data formats, communication protocols, performance metrics, or constraints (e.g., latency, throughput). It also does not define success criteria or provide examples, making it difficult to evaluate or implement precisely. The vagueness in specifications reduces clarity and makes it hard to assess what exactly is expected."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires deep knowledge of distributed systems, real-time synchronization, secure communication, and fault tolerance\u2014core challenges in systems engineering. Implementing peer-to-peer networking with conflict resolution and public-key cryptography at scale is extremely complex and goes beyond typical programming tasks. It involves advanced concepts such as consensus algorithms, data consistency models, cryptographic key management, and network resilience, which are not accessible to beginners or even intermediate developers without significant experience."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is broad and ambitious, covering multiple complex domains such as distributed systems, real-time collaboration, peer-to-peer networking, conflict resolution, and cryptographic authentication. While it outlines key components, it lacks specific requirements like data formats, communication protocols, performance metrics, or constraints (e.g., latency, throughput). It also does not define success criteria or provide examples, making ..."
+  },
+  {
+    "uid": "gen_000004",
+    "instruction": "Design a Python-based application using Streamlit to analyze and visualize climate data from global ...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is comprehensive and well-structured, clearly specifying the required components: user interface elements (text input, date picker, dropdown), data sources (NOAA, Climate Data Online), data processing steps (handling missing values, outliers), visualization requirements (line charts, heatmaps), error handling, logging, and unit testing. It provides a clear scope and expected outcomes, making it easy to understand what is being asked. The inclusion of specific technical requirements (e.g., API usage, validation logic) enhances its precision. However, it could be slightly improved by specifying the exact data formats or time ranges supported by the APIs, or by defining success criteria for unit tests. Despite this, the overall clarity and specificity are strong."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires the integration of multiple complex components: building a full interactive Streamlit app, fetching and processing real-time climate data from external APIs, implementing robust error handling, performing data validation, generating interactive visualizations, and maintaining a logging system with unit testing. It also demands knowledge of climate data structures, API interactions, and data science best practices. These elements combine to form a highly complex, real-world application that goes beyond basic coding tasks and involves system design, data handling, and software engineering principles. The difficulty is further amplified by the need to handle edge cases, ensure data integrity, and validate user inputs within constrained API parameters. This level of integration and depth makes it a very hard challenge."
+      }
+    },
+    "raw_response": " \n\n<response>\n  <question_quality>\n    <reasoning>The question is comprehensive and well-structured, clearly specifying the required components: user interface elements (text input, date picker, dropdown), data sources (NOAA, Climate Data Online), data processing steps (handling missing values, outliers), visualization requirements (line charts, heatmaps), error handling, logging, and unit testing. It provides a clear scope and expected outcomes, making it easy to understand what is being asked...."
+  },
+  {
+    "uid": "gen_000005",
+    "instruction": "Build a Rust-based decentralized messaging system using Tokio and WebSockets. The system should supp...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is highly vague and lacks specific technical requirements. It does not define what constitutes \"secure\" communication, specify encryption protocols (e.g., E2EE using libsodium or Curve25519), or clarify how peer discovery, message routing, or network topology visualization should be implemented. It also fails to specify whether the UI should be web-based, desktop, or mobile, or what tools (e.g., React, Tk) should be used. The absence of constraints, success criteria, or test cases makes it ambiguous and open-ended."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires building a full-scale, production-grade decentralized system with real-time communication, end-to-end encryption, dynamic peer management, and a user interface\u2014all of which involve complex distributed systems concepts, cryptographic protocols, and real-time networking. It goes beyond typical coding challenges and would require deep expertise in systems programming, networking, cryptography, and UI development. This level of complexity is far beyond what is expected in standard programming interviews or learning environments."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is highly vague and lacks specific technical requirements. It does not define what constitutes \"secure\" communication, specify encryption protocols (e.g., E2EE using libsodium or Curve25519), or clarify how peer discovery, message routing, or network topology visualization should be implemented. It also fails to specify whether the UI should be web-based, desktop, or mobile, or what tools (e.g., React, Tk) should be used. The absence ..."
+  },
+  {
+    "uid": "gen_000006",
+    "instruction": "Build a Python application using Streamlit to monitor and analyze real-time IoT sensor data from sma...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "average",
+        "reasoning": "The question is overly verbose and repetitive, with excessive formatting and punctuation that do not add value. While the core idea\u2014building a Streamlit app for real-time IoT sensor data monitoring\u2014is clear, the lack of specific constraints (e.g., data formats, anomaly detection algorithms, sensor types, or performance requirements) makes it ambiguous. The mention of \"automated test cases\" and \"varying load conditions\" is vague without defining what constitutes a valid test or load scenario. Overall, the question is technically sound in intent but poorly structured and lacks precision in requirements."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question involves multiple complex components: real-time data ingestion, anomaly detection, live visualization, data pipeline design, and performance testing under load. These elements require knowledge of Python, Streamlit, IoT data handling, real-time processing, data storage, and testing frameworks. While the core concept is accessible, the integration of these components at a high level makes the problem significantly more complex than typical beginner-level tasks. It demands a strong grasp of system design and software engineering principles."
+      }
+    },
+    "raw_response": " XML format:\n<response>\n  <question_quality>\n    <reasoning>The question is overly verbose and repetitive, with excessive formatting and punctuation that do not add value. While the core idea\u2014building a Streamlit app for real-time IoT sensor data monitoring\u2014is clear, the lack of specific constraints (e.g., data formats, anomaly detection algorithms, sensor types, or performance requirements) makes it ambiguous. The mention of \"automated test cases\" and \"varying load conditions\" is vague without ..."
+  },
+  {
+    "uid": "gen_000007",
+    "instruction": "Design a Python-based data analysis platform that enables financial analysts to perform real-time st...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is highly detailed and specifies key components such as real-time data processing, Dash-based dashboards, asynchronous handling, error logging, and testing requirements. It clearly outlines the expected functionality, performance criteria (minimal latency), and system reliability needs. The scope is well-defined and includes both technical and operational aspects, making it comprehensive and actionable for developers. However, it does not specify constraints like data sources, market data frequency, or API limitations, which could introduce ambiguity. Despite this, the overall clarity and specificity are strong, making the question well-structured and practical for a real-world development scenario."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a full-scale, production-grade data analysis platform with real-time processing, asynchronous event handling, live visualization, and robust error management. It involves integrating Dash with high-frequency data streams, managing system responsiveness under load, and ensuring data accuracy through comprehensive testing. These components combine multiple advanced concepts in Python, asynchronous programming, real-time web frameworks, and financial data systems, which together form a highly complex and challenging task. The integration of real-time performance with reliability and testing demands deep expertise across several domains, placing the difficulty at the upper end of the scale."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is highly detailed and specifies key components such as real-time data processing, Dash-based dashboards, asynchronous handling, error logging, and testing requirements. It clearly outlines the expected functionality, performance criteria (minimal latency), and system reliability needs. The scope is well-defined and includes both technical and operational aspects, making it comprehensive and actionable for developers. However, it does..."
+  },
+  {
+    "uid": "gen_000008",
+    "instruction": "Build a Python platform using FastAPI and Plotly Dash to monitor and predict urban traffic congestio...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is broad and ambitious, covering multiple technologies and domains (FastAPI, Plotly Dash, real-time data ingestion, machine learning, real-time analytics, error handling, and testing). While it outlines a comprehensive goal, it lacks specific details such as data sources, data formats, model types, evaluation metrics, expected performance thresholds, or constraints (e.g., latency, data volume). The absence of clear boundaries or success criteria makes it difficult to assess feasibility or implement a focused solution. Without specifying what constitutes \"actionable insights\" or how the dashboard should be structured, the question is vague and open-ended."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires integrating multiple complex systems\u2014real-time data processing, machine learning forecasting, interactive dashboards, and robust error handling\u2014each with its own domain-specific challenges. It demands deep knowledge of backend services, data pipelines, ML model deployment, and frontend interactivity, all while maintaining system reliability under variable conditions. This level of integration and complexity far exceeds typical coding challenges and would require extensive architectural design and implementation effort."
+      }
+    },
+    "raw_response": " \n\nNote: The rating should be consistent with the reasoning.\n\n<response>\n  <question_quality>\n    <reasoning>The question is broad and ambitious, covering multiple technologies and domains (FastAPI, Plotly Dash, real-time data ingestion, machine learning, real-time analytics, error handling, and testing). While it outlines a comprehensive goal, it lacks specific details such as data sources, data formats, model types, evaluation metrics, expected performance thresholds, or constraints (e.g., lat..."
+  },
+  {
+    "uid": "gen_000009",
+    "instruction": "Design a recommendation system that personalizes content based on user interaction patterns and devi...",
+    "category": "scientific_computing",
+    "assessment": {
+      "question_quality": {
+        "rating": "good",
+        "reasoning": "The question is clear in its intent to design a recommendation system that considers user interaction patterns and device context. It specifies key factors like session duration, navigation frequency, and device type, which are relevant to real-time personalization. However, it lacks concrete constraints, data formats, or evaluation metrics, which could make it ambiguous for implementation. Despite this, the core requirements are well-defined and understandable for a developer."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question involves real-time dynamic adjustment of recommendations, requiring integration of user behavior data, device context, and real-time processing. It demands knowledge of machine learning models, real-time data pipelines, and system architecture design\u2014elements that go beyond basic coding tasks. The need to balance personalization with performance and scalability adds significant complexity."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is clear in its intent to design a recommendation system that considers user interaction patterns and device context. It specifies key factors like session duration, navigation frequency, and device type, which are relevant to real-time personalization. However, it lacks concrete constraints, data formats, or evaluation metrics, which could make it ambiguous for implementation. Despite this, the core requirements are well-defined a..."
+  },
+  {
+    "uid": "gen_000000",
+    "instruction": "Could you design a React application with Zustand for state management that dynamically renders a pr...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is vague and lacks specific requirements such as data structure, UI components, update frequency, or filtering logic. It does not define what \"real-time\" means in a React/Zustand context, nor does it specify how tasks are created, updated, or filtered. The absence of constraints or examples makes it difficult to evaluate or implement precisely."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The requested functionality involves multiple complex concepts\u2014state management with Zustand, dynamic rendering, real-time updates (which in React typically means state changes via events or polling), task tracking, and conditional filtering. These components combine frontend architecture, state logic, and user interaction, requiring deep understanding of React lifecycle, Zustand patterns, and UI responsiveness. Without clear boundaries, the difficulty is high and open-ended."
+      }
+    },
+    "raw_response": " \n\nNote: Do not include any markdown, code blocks, or other formatting beyond the specified XML structure.\n\n<response>\n  <question_quality>\n    <reasoning>The question is vague and lacks specific requirements such as data structure, UI components, update frequency, or filtering logic. It does not define what \"real-time\" means in a React/Zustand context, nor does it specify how tasks are created, updated, or filtered. The absence of constraints or examples makes it difficult to evaluate or implem..."
+  },
+  {
+    "uid": "gen_000001",
+    "instruction": "Please build my Idea: Python-based Real-time IoT Device Monitoring System with WebSocket communicati...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "very poor",
+        "reasoning": "The question is repetitive and contains no new content. It is essentially a copy-paste of the same request multiple times, which makes it unclear and redundant. While the technical requirements are detailed and relevant, the lack of originality and the repetitive structure reduce clarity and make it appear as if the user is attempting to force content through a system. The note about being self-contained and self-explanatory is present but does not improve the quality due to redundancy. Overall, the core idea is well-defined, but the presentation is flawed."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The system involves real-time data processing, WebSocket communication, data validation, alerting mechanisms, and dashboard visualization\u2014all of which are complex and interdependent components. Implementing secure data transmission, handling multiple concurrent streams, validating thresholds, and integrating email or in-app notifications adds significant technical depth. The requirement to build a full-stack system with backend, real-time features, and frontend visualization places it well beyond basic programming tasks, requiring knowledge of networking, data validation, security, and full-stack development."
+      }
+    },
+    "raw_response": " XML format:\n<response>\n  <question_quality>\n    <reasoning>The question is repetitive and contains no new content. It is essentially a copy-paste of the same request multiple times, which makes it unclear and redundant. While the technical requirements are detailed and relevant, the lack of originality and the repetitive structure reduce clarity and make it appear as if the user is attempting to force content through a system. The note about being self-contained and self-explanatory is present ..."
+  },
+  {
+    "uid": "gen_000002",
+    "instruction": "Design a real-time collaborative document editor that allows multiple users to edit the same documen...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "good",
+        "reasoning": "The question is broad and ambitious, covering multiple complex systems such as real-time collaboration, conflict resolution, versioning, and scalability. While it specifies key components like vector clocks, WebSocket communication, and auditability, it lacks concrete constraints (e.g., document format, user interaction model, performance metrics) and does not define expected outputs or success criteria. The absence of a specific problem domain (e.g., plain text vs. rich text) or clear success metrics makes it ambiguous for a focused implementation. However, the core requirements are well-identified and technically relevant."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a deep understanding of distributed systems, real-time synchronization, conflict resolution algorithms (like vector clocks), and scalable backend design. It also demands knowledge of real-time communication protocols (e.g., WebSocket), state management, and handling high concurrency. Implementing a fully functional, conflict-free, and scalable collaborative editor with versioning and audit trails is a complex, production-grade challenge that goes beyond basic coding problems and into system design territory. This level of complexity is typical of advanced engineering roles."
+      }
+    },
+    "raw_response": " XML\n<response>\n  <question_quality>\n    <reasoning>The question is broad and ambitious, covering multiple complex systems such as real-time collaboration, conflict resolution, versioning, and scalability. While it specifies key components like vector clocks, WebSocket communication, and auditability, it lacks concrete constraints (e.g., document format, user interaction model, performance metrics) and does not define expected outputs or success criteria. The absence of a specific problem domain..."
+  },
+  {
+    "uid": "gen_000003",
+    "instruction": "\ud83c\udfaf AI Prompt Validator and Refiner\nOverview:\nThis React app allows users to:\nValidate and refine AI-g...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-structured and provides a clear overview of the app's purpose, features, and expected outcomes. It includes specific components (intent, target audience, context, etc.), examples, and detailed feedback formats. The prompt is comprehensive and avoids ambiguity, making it easy to understand what is being asked. However, it lacks explicit technical requirements (e.g., state management, API integration, or specific React hooks) that might be needed for implementation. Despite this, the overall clarity and specification are strong."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question involves multiple complex features\u2014prompt parsing, natural language analysis, user feedback systems, rubric-based scoring, and dynamic refinement\u2014requiring deep understanding of both AI prompt engineering and React application design. Implementing features like component extraction, scoring logic, and version comparison demands significant algorithmic and software engineering thinking. While the high-level features are accessible, the integration of these components into a cohesive, user-friendly app increases the difficulty considerably."
+      }
+    },
+    "raw_response": " XML\n\n```xml\n<response>\n  <question_quality>\n    <reasoning>The question is well-structured and provides a clear overview of the app's purpose, features, and expected outcomes. It includes specific components (intent, target audience, context, etc.), examples, and detailed feedback formats. The prompt is comprehensive and avoids ambiguity, making it easy to understand what is being asked. However, it lacks explicit technical requirements (e.g., state management, API integration, or specific Reac..."
+  },
+  {
+    "uid": "gen_000004",
+    "instruction": "Design a visually engaging React application with integrated Tailwind CSS that displays the Fibonacc...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-written and provides a clear, detailed description of the desired features, including visual elements, interactivity, and user experience components like tooltips and real-time calculations. It specifies the technologies (React and Tailwind CSS) and the core functionality (Fibonacci Spiral with animated paths and color transitions). However, it lacks specific constraints such as performance requirements, accessibility standards, or error handling, which could affect clarity in implementation. Despite this, the overall specification is comprehensive and actionable for a developer."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires a deep understanding of both React state management, animation systems, and mathematical computations related to the Fibonacci sequence. It also demands integration of interactive UI elements (slider, calculator), dynamic rendering of geometric shapes, and real-time updates with visual feedback. Implementing smooth animations with color transitions based on Fibonacci numbers adds a high level of complexity, especially when ensuring responsiveness and visual coherence. These aspects make the task significantly more challenging than basic React components."
+      }
+    },
+    "raw_response": " \n\nNote: Do not include any markdown, code blocks, or other formatting beyond the specified XML structure.\n\n<response>\n  <question_quality>\n    <reasoning>The question is well-written and provides a clear, detailed description of the desired features, including visual elements, interactivity, and user experience components like tooltips and real-time calculations. It specifies the technologies (React and Tailwind CSS) and the core functionality (Fibonacci Spiral with animated paths and color tra..."
+  },
+  {
+    "uid": "gen_000005",
+    "instruction": "Design a real-time collaborative document editor using React and WebSockets. Allow multiple users to...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-defined and specifies key requirements such as real-time collaboration, conflict resolution, live cursor indicators, shared history, and undo/redo functionality. It clearly outlines the technologies (React and WebSockets) and the desired user experience. The inclusion of specific features like visual cues for changes and synchronization ensures that the solution scope is well-structured and realistic. However, it lacks explicit constraints (e.g., performance requirements, user count limits, or specific conflict resolution algorithms) and does not define input/output formats or edge cases. Despite this, the overall clarity and specificity are strong, making it a solidly written and focused prompt."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a full-scale real-time collaborative editing system with advanced features such as conflict resolution, live cursor tracking, and undo/redo with shared history. This involves complex state management, real-time communication via WebSockets, handling concurrent edits, and ensuring data consistency across multiple clients. The integration of React for UI rendering with real-time synchronization adds significant architectural and implementation challenges. Additionally, the need for visual cues and conflict resolution introduces non-trivial algorithmic and UX considerations. These factors make the problem significantly more complex than basic React or WebSocket tasks."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is well-defined and specifies key requirements such as real-time collaboration, conflict resolution, live cursor indicators, shared history, and undo/redo functionality. It clearly outlines the technologies (React and WebSockets) and the desired user experience. The inclusion of specific features like visual cues for changes and synchronization ensures that the solution scope is well-structured and realistic. However, it lacks explici..."
+  },
+  {
+    "uid": "gen_000006",
+    "instruction": "Design a Python script that analyzes user feedback from a survey system, categorizes responses into ...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "good",
+        "reasoning": "The question is well-structured and specifies a clear objective: analyzing user feedback with NLP. It outlines the required components (input processing, text preprocessing, sentiment scoring via keyword matching, output reporting with visualizations, error handling, and batch processing). The requirements are detailed and cover both functional and non-functional aspects (e.g., error handling, scalability). However, it lacks specific details on the keyword list, the exact preprocessing steps (e.g., tokenization, stopword removal), or the visualization tools to use. These omissions could lead to ambiguity in implementation. Despite this, the overall structure is solid and the intent is clear."
+      },
+      "question_difficulty": {
+        "rating": "hard",
+        "reasoning": "The question requires implementing a full NLP pipeline involving data ingestion, preprocessing, sentiment analysis via keyword matching, reporting, and error handling. It also demands the use of visualizations, which adds complexity. While keyword-based sentiment scoring is relatively simple, integrating multiple components (batch processing, error handling, output formatting) and ensuring robustness across malformed data increases the difficulty. The lack of a defined sentiment model or keyword list means the solution must be generic, which can be challenging without clear guidance. Overall, the task is substantial and requires both programming and domain-specific knowledge, making it a moderately to highly complex problem."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is well-structured and specifies a clear objective: analyzing user feedback with NLP. It outlines the required components (input processing, text preprocessing, sentiment scoring via keyword matching, output reporting with visualizations, error handling, and batch processing). The requirements are detailed and cover both functional and non-functional aspects (e.g., error handling, scalability). However, it lacks specific details on th..."
+  },
+  {
+    "uid": "gen_000007",
+    "instruction": "Implement a real-time collaborative document editing system using WebSockets and a simple text edito...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "poor",
+        "reasoning": "The question is extremely verbose and repetitive, with redundant and overlapping requirements. While the core idea of a real-time collaborative editor is clear, the excessive repetition and lack of concise structure make it difficult to parse and understand. Key elements like WebSocket communication, cursor synchronization, conflict resolution, and user management are specified in detail, but the redundancy and lack of logical flow reduce clarity. The question does not clearly define the scope or boundaries (e.g., how conflicts are resolved, what constitutes a \"duplicate\" cursor position), and the requirement for a \"sequence number\" or \"timestamp-based approach\" is not fully explained. Despite the detailed specification, the overwhelming verbosity and lack of focus on essential components make it hard to extract the actual problem statement."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question demands a highly complex implementation involving real-time synchronization, conflict resolution, cursor tracking, input throttling, and robust error handling\u2014all without server-side code. It requires deep understanding of client-side WebSockets, text editing state management, and concurrent edit resolution. The requirement to handle disconnections, reconnections, and duplicate cursor positions with a realistic latency simulation adds significant complexity. Implementing a fully functional, conflict-resolved, seamless collaboration system in a single HTML file with no server-side components is extremely challenging and goes beyond typical browser-based client-side programming. This level of sophistication is not feasible without a server to manage state and sequence numbers, making the task effectively impossible in a pure client-side environment."
+      }
+    },
+    "raw_response": " \n\nNote: The rating values must be exactly as specified in the instructions. Do not add extra text or change the format.\n\n<response>\n  <question_quality>\n    <reasoning>The question is extremely verbose and repetitive, with redundant and overlapping requirements. While the core idea of a real-time collaborative editor is clear, the excessive repetition and lack of concise structure make it difficult to parse and understand. Key elements like WebSocket communication, cursor synchronization, confl..."
+  },
+  {
+    "uid": "gen_000009",
+    "instruction": "Make a Streamlit app that functions as a dynamic data transformation tool, allowing users to upload ...",
+    "category": "web_design",
+    "assessment": {
+      "question_quality": {
+        "rating": "excellent",
+        "reasoning": "The question is well-structured and provides a clear, detailed description of the required functionality. It specifies key features such as file upload, real-time data cleaning, live previews, visualization, workflow chaining, and dynamic metrics. Each component is clearly defined, making it easy for a developer to understand the scope and expectations. The inclusion of specific examples (e.g., removing missing values, standardizing column names) adds precision. Overall, the question is comprehensive and avoids vagueness."
+      },
+      "question_difficulty": {
+        "rating": "very hard",
+        "reasoning": "The question requires implementing a full-featured Streamlit application with real-time data processing, dynamic UI updates, and interactive visualizations. It involves integrating data cleaning operations, maintaining state across user actions, updating visualizations on-the-fly, and managing dynamic metrics. These components combine multiple advanced concepts in data processing and web development, making it significantly more complex than basic coding tasks. The requirement for a workflow interface with chained operations adds further complexity, especially in handling state and ensuring smooth real-time updates."
+      }
+    },
+    "raw_response": " \n<response>\n  <question_quality>\n    <reasoning>The question is well-structured and provides a clear, detailed description of the required functionality. It specifies key features such as file upload, real-time data cleaning, live previews, visualization, workflow chaining, and dynamic metrics. Each component is clearly defined, making it easy for a developer to understand the scope and expectations. The inclusion of specific examples (e.g., removing missing values, standardizing column names) ..."
+  }
+]

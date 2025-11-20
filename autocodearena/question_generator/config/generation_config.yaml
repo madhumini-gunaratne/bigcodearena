@@ -1,0 +1,51 @@
+# Generation Configuration
+
+# LLM Settings
+llm:
+  model_name: "Qwen/Qwen3-4B-Instruct-2507"
+  temperature: 1.0 # How creative the model's output will be
+  top_p: 0.95 # Diversity of word choices
+  max_tokens: 2048
+  max_model_len: 4096
+  dtype: "float16"
+  device: "0"  # GPU device ID
+  tensor_parallel_size: 1
+
+# Generation Settings
+generation:
+  num_questions_per_seed: 1  # How many questions to generate per seed sample
+  batch_size: 8  # Number of parallel generations
+  seed_batch_size: 2  # Number of seed questions to use as examples
+  output_file: "results/generated_questions.jsonl"
+
+# Diversification Settings
+diversification:
+  num_variations_per_question: 2  # Number of variations to create per question
+  increase_complexity: true
+  enable_domain_shift: true
+  output_file: "results/diversified_questions.jsonl"
+
+# Deduplication Settings
+deduplication:
+  similarity_model: "all-mpnet-base-v2"  # Sentence transformer model
+  similarity_threshold: 0.85  # Keep questions with similarity < 0.85
+  encoding_batch_size: 32
+  device: "cuda"  # or "cpu"
+  output_file: "results/final_questions.jsonl"
+
+# Seed Configuration
+seeds:
+  input_directory: "seeds/"
+  categories: []  # Empty list = use all available categories
+
+# Logging
+logging:
+  level: "INFO"
+  save_logs: true
+  log_file: "results/generation.log"
+
+# Output Format
+output:
+  format: "jsonl"  # JSON Lines format
+  include_metadata: true
+  track_provenance: true  # Track which seeds generated each question
